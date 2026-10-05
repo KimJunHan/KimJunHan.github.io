@@ -129,6 +129,8 @@ table{border-collapse:collapse;width:100%;min-width:700px;font-size:.9rem}
 th,td{text-align:left;padding:.85rem 1rem;border-bottom:1px solid var(--line-soft);vertical-align:top}
 th{color:var(--mute);font-weight:500;font-size:.8rem;background:var(--panel)}
 tbody tr:last-child td{border-bottom:none}
+td a{text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
+td a:hover{border-color:var(--walkway)}
 td.yr{font-family:"Space Grotesk",sans-serif;color:var(--mute);white-space:nowrap}
 .first{color:var(--drivable)}
 
@@ -218,7 +220,7 @@ footer{padding:2.6rem 0 3.4rem;color:var(--mute);font-size:.8rem;border-top:1px 
           <div>AVEC 2026</div>
         </div>
         <div>
-          <h3>GaussianDT <em>— camera–radar Gaussian BEV detection and tracking</em></h3>
+          <h3><a href="projects/gaussiandt/" style="text-decoration:none">GaussianDT <em>— camera–radar Gaussian BEV detection and tracking</em></a></h3>
           <p>
             To address both grid discretization error and the detection–tracking split, I defined an
             augmented 3D Gaussian carrying a motion vector and an identity embedding. Radar Doppler
@@ -240,7 +242,7 @@ footer{padding:2.6rem 0 3.4rem;color:var(--mute);font-size:.8rem;border-top:1px 
           <div>IEEE Access</div>
         </div>
         <div>
-          <h3>SegMam <em>— Pseudo-LiDAR with Cross-Mamba attention for BEV segmentation</em></h3>
+          <h3><a href="projects/segmam/" style="text-decoration:none">SegMam <em>— Pseudo-LiDAR with Cross-Mamba attention for BEV segmentation</em></a></h3>
           <p>
             I reformulated Transformer cross-attention as Mamba's selective scan, yielding a
             Query–Value two-stream block with no explicit Key projection. Pseudo-LiDAR point clouds
@@ -262,7 +264,7 @@ footer{padding:2.6rem 0 3.4rem;color:var(--mute);font-size:.8rem;border-top:1px 
           <div>KSAE</div>
         </div>
         <div>
-          <h3>Real-time BEV on edge devices <em>— ONNX, TensorRT, Jetson</em></h3>
+          <h3><a href="projects/edge-bev/" style="text-decoration:none">Real-time BEV on edge devices <em>— ONNX, TensorRT, Jetson</em></a></h3>
           <p>
             Instead of stopping at desktop numbers, I exported the model to ONNX, quantized it to
             FP16, built a TensorRT engine and deployed it on Jetson boards. Measurements confirmed
@@ -283,7 +285,7 @@ footer{padding:2.6rem 0 3.4rem;color:var(--mute);font-size:.8rem;border-top:1px 
           <div>KEIT</div>
         </div>
         <div>
-          <h3>Vehicle data pipeline and ROS perception module</h3>
+          <h3><a href="projects/vehicle-pipeline/" style="text-decoration:none">Vehicle data pipeline and ROS perception module</a></h3>
           <p>
             I helped convert a Sonata into a data collection platform (6 cameras, 1 LiDAR, GPS, IMU)
             and ran polygon ground-truth labeling for drivable area. Model output is converted into
@@ -313,15 +315,15 @@ footer{padding:2.6rem 0 3.4rem;color:var(--mute);font-size:.8rem;border-top:1px 
           <tr><th>Title</th><th>Venue</th><th>Role</th><th>Year</th></tr>
         </thead>
         <tbody>
-          <tr><td>SegMam: Multi-Scale Deformable Cross-Mamba Attention with Pseudo-LiDAR from Multi-Camera Depth for BEV Segmentation</td><td>IEEE Access (SCIE)</td><td class="first">First author</td><td class="yr">2026</td></tr>
-          <tr><td>GaussianDT: Gaussian Splatting Optimization for Object Detection and Tracking with Camera–Radar Fusion</td><td>AVEC 2026, Tsukuba, Japan</td><td class="first">First author</td><td class="yr">2026</td></tr>
+          <tr><td><a href="projects/segmam/">SegMam: Multi-Scale Deformable Cross-Mamba Attention with Pseudo-LiDAR from Multi-Camera Depth for BEV Segmentation</a></td><td>IEEE Access (SCIE)</td><td class="first">First author</td><td class="yr">2026</td></tr>
+          <tr><td><a href="projects/gaussiandt/">GaussianDT: Gaussian Splatting Optimization for Object Detection and Tracking with Camera–Radar Fusion</a></td><td>AVEC 2026, Tsukuba, Japan</td><td class="first">First author</td><td class="yr">2026</td></tr>
           <tr><td>Vehicle Trajectory Correction in ORB Visual SLAM Using Extended Kalman Filter</td><td>Transactions of KSAE 34(3)</td><td class="first">First author</td><td class="yr">2026</td></tr>
-          <tr><td>Map-view Prior Based Radar Multi-Object Tracking</td><td>Transactions of KSAE (under review)</td><td class="first">First author</td><td class="yr">2026</td></tr>
-          <tr><td>3D Multi-Camera Depth BEV Semantic Segmentation Using Multi-Scale Deformable Cross-Attention Mamba</td><td>KSAE Fall Conference</td><td class="first">First author</td><td class="yr">2025</td></tr>
-          <tr><td>Analysis and Comparison of BEV-Based Deep Learning Semantic Segmentation for Urban Driving Area Perception</td><td>KSAE Conference</td><td class="first">First author</td><td class="yr">2025</td></tr>
-          <tr><td>Development of a Lightweight BEV Drivable Area Model for Real-Time Inference on Edge Devices</td><td>KSAE Spring Conference</td><td>Co-author</td><td class="yr">2026</td></tr>
-          <tr><td>BEV Semantic Segmentation Using Deep Learning-Based Camera–Pseudo LiDAR Sensor Fusion</td><td>KSAE Spring Conference</td><td>Co-author</td><td class="yr">2025</td></tr>
-          <tr><td>Target-Based Automated Camera–LiDAR Calibration for Low-Channel LiDAR Sensors</td><td>KSAE Fall Conference</td><td>Co-author</td><td class="yr">2025</td></tr>
+          <tr><td><a href="projects/gaussiandt/">Map-view Prior Based Radar Multi-Object Tracking</a></td><td>Transactions of KSAE (under review)</td><td class="first">First author</td><td class="yr">2026</td></tr>
+          <tr><td><a href="projects/segmam/">3D Multi-Camera Depth BEV Semantic Segmentation Using Multi-Scale Deformable Cross-Attention Mamba</a></td><td>KSAE Fall Conference</td><td class="first">First author</td><td class="yr">2025</td></tr>
+          <tr><td><a href="projects/segmam/">Analysis and Comparison of BEV-Based Deep Learning Semantic Segmentation for Urban Driving Area Perception</a></td><td>KSAE Conference</td><td class="first">First author</td><td class="yr">2025</td></tr>
+          <tr><td><a href="projects/edge-bev/">Development of a Lightweight BEV Drivable Area Model for Real-Time Inference on Edge Devices</a></td><td>KSAE Spring Conference</td><td>Co-author</td><td class="yr">2026</td></tr>
+          <tr><td><a href="projects/segmam/">BEV Semantic Segmentation Using Deep Learning-Based Camera–Pseudo LiDAR Sensor Fusion</a></td><td>KSAE Spring Conference</td><td>Co-author</td><td class="yr">2025</td></tr>
+          <tr><td><a href="projects/vehicle-pipeline/">Target-Based Automated Camera–LiDAR Calibration for Low-Channel LiDAR Sensors</a></td><td>KSAE Fall Conference</td><td>Co-author</td><td class="yr">2025</td></tr>
         </tbody>
       </table>
     </div>
