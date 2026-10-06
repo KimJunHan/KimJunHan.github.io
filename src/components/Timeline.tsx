@@ -53,7 +53,7 @@ function Timeline() {
             </h4>
             <p>
               Led vision work on Hyundai Mobis advance vehicle projects (M.VISION
-              HI, POP, H2GO): gaze tracking, gesture recognition, pedestrian
+              HI, POP, H2GO, Humancentric): gaze tracking, gesture recognition, pedestrian
               detection, stereo object detection, and a real-time system spanning
               eight PCs.
             </p>

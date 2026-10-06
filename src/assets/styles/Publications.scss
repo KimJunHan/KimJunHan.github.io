@@ -70,6 +70,26 @@
   tr:hover td {
     background: rgba(92, 124, 250, 0.06);
   }
+
+  td.pdf-cell {
+    text-align: center;
+    white-space: nowrap;
+
+    a {
+      color: #d32f2f;
+      display: inline-flex;
+      align-items: center;
+      transition: color 0.15s;
+
+      &:hover {
+        color: #b71c1c;
+      }
+
+      svg {
+        font-size: 1.3rem;
+      }
+    }
+  }
 }
 
 .patents-grid {

@@ -120,7 +120,7 @@ function Main() {
                   advised by Prof. Sanghwan Lee), building foundations in deep
                   learning and computer vision. Concurrently joined Anyractive
                   as an AI/Vision developer working on Hyundai Mobis advance
-                  vehicle projects (M.VISION HI, POP, H2GO) &mdash; developing
+                  vehicle projects (M.VISION HI, POP, H2GO, Humancentric) &mdash; developing
                   real-time camera and LiDAR algorithms for gaze tracking,
                   gesture recognition, and pedestrian detection across a system
                   spanning eight PCs. Building LiDAR-based pedestrian detection

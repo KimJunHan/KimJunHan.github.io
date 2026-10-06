@@ -82,6 +82,84 @@ function Project() {
           </a>
         </div>
       </div>
+
+      <h1 style={{ marginTop: "3rem" }}>Industry Projects</h1>
+      <p style={{ color: "#666", marginBottom: "1.5rem" }}>
+        Hyundai Mobis advance vehicle projects at Anyractive (2021 &mdash; 2024)
+      </p>
+      <div className="projects-grid">
+        <div className="project">
+          <a href={process.env.PUBLIC_URL + "/projects/mvision-hi/"}>
+            <div className="project-card zoom">
+              <span className="project-tag">Hyundai Mobis</span>
+              <span className="project-venue">CES Concept Vehicle</span>
+              <h2>M.VISION HI</h2>
+              <p className="project-subtitle">
+                Gaze tracking &amp; gesture recognition for autonomous robotaxi concept
+              </p>
+              <ul className="project-metrics">
+                <li>Gaze Tracking</li>
+                <li>Gesture Recognition</li>
+                <li className="highlight">8-PC Real-Time System</li>
+              </ul>
+            </div>
+          </a>
+        </div>
+
+        <div className="project">
+          <a href={process.env.PUBLIC_URL + "/projects/mvision-pop/"}>
+            <div className="project-card zoom">
+              <span className="project-tag">Hyundai Mobis</span>
+              <span className="project-venue">CES Concept Vehicle</span>
+              <h2>M.VISION POP</h2>
+              <p className="project-subtitle">
+                Stereo vision &amp; interaction system for personal urban mobility
+              </p>
+              <ul className="project-metrics">
+                <li>Stereo Vision</li>
+                <li>Gesture Recognition</li>
+                <li className="highlight">Real-Time Processing</li>
+              </ul>
+            </div>
+          </a>
+        </div>
+
+        <div className="project">
+          <a href={process.env.PUBLIC_URL + "/projects/h2go/"}>
+            <div className="project-card zoom">
+              <span className="project-tag">Hyundai Mobis</span>
+              <span className="project-venue">Advance Vehicle</span>
+              <h2>H2GO</h2>
+              <p className="project-subtitle">
+                LiDAR pedestrian detection &amp; stereo object detection for hydrogen mobility
+              </p>
+              <ul className="project-metrics">
+                <li>LiDAR Pedestrian Detection</li>
+                <li>Stereo Object Detection</li>
+                <li className="highlight">Safety System</li>
+              </ul>
+            </div>
+          </a>
+        </div>
+
+        <div className="project">
+          <a href={process.env.PUBLIC_URL + "/projects/humancentric/"}>
+            <div className="project-card zoom">
+              <span className="project-tag">Hyundai Mobis</span>
+              <span className="project-venue">Advance Vehicle</span>
+              <h2>Humancentric</h2>
+              <p className="project-subtitle">
+                Occupant monitoring &amp; human-centric AI interaction system
+              </p>
+              <ul className="project-metrics">
+                <li>Occupant Monitoring</li>
+                <li>Gaze &amp; Gesture AI</li>
+                <li className="highlight">Behavior Understanding</li>
+              </ul>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
