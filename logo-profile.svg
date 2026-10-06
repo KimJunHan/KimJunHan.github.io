@@ -1,74 +1,71 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
   <defs>
     <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#2A3E44"/>
-      <stop offset="100%" stop-color="#152228"/>
+      <stop offset="0%" stop-color="#3A5560"/>
+      <stop offset="100%" stop-color="#1E3038"/>
     </linearGradient>
-    <linearGradient id="sensorGlow" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#8BC34A" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#8BC34A" stop-opacity="0.02"/>
+    <linearGradient id="cone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#76FF03" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#76FF03" stop-opacity="0"/>
     </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <filter id="eyeGlow">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
 
-  <!-- background -->
-  <rect width="400" height="400" rx="44" fill="#0A0E10"/>
-  <rect width="400" height="400" rx="44" fill="none" stroke="#2A3A40" stroke-width="2"/>
+  <!-- bg -->
+  <rect width="400" height="400" rx="40" fill="#080C0E"/>
+  <rect width="400" height="400" rx="40" fill="none" stroke="#2E4448" stroke-width="3"/>
 
   <!-- road -->
-  <rect x="30" y="260" width="340" height="50" rx="6" fill="#1A2226"/>
-  <line x1="70" y1="285" x2="120" y2="285" stroke="#3A4A4E" stroke-width="3.5" stroke-dasharray="10 8"/>
-  <line x1="150" y1="285" x2="200" y2="285" stroke="#3A4A4E" stroke-width="3.5" stroke-dasharray="10 8"/>
-  <line x1="230" y1="285" x2="280" y2="285" stroke="#3A4A4E" stroke-width="3.5" stroke-dasharray="10 8"/>
-  <line x1="310" y1="285" x2="340" y2="285" stroke="#3A4A4E" stroke-width="3.5" stroke-dasharray="10 8"/>
+  <rect x="30" y="225" width="340" height="42" rx="4" fill="#162020"/>
+  <line x1="70" y1="246" x2="120" y2="246" stroke="#3E5555" stroke-width="4" stroke-dasharray="10 8"/>
+  <line x1="150" y1="246" x2="200" y2="246" stroke="#3E5555" stroke-width="4" stroke-dasharray="10 8"/>
+  <line x1="230" y1="246" x2="280" y2="246" stroke="#3E5555" stroke-width="4" stroke-dasharray="10 8"/>
+  <line x1="310" y1="246" x2="350" y2="246" stroke="#3E5555" stroke-width="4" stroke-dasharray="10 8"/>
 
-  <!-- sensor detection cone -->
-  <path d="M200,185 L100,100 Q200,55 300,100 Z" fill="url(#sensorGlow)"/>
-  <path d="M200,185 L100,100 Q200,55 300,100" fill="none" stroke="#8BC34A" stroke-width="2" opacity="0.7"/>
-  <!-- sensor range rings -->
-  <path d="M130,120 Q200,85 270,120" fill="none" stroke="#8BC34A" stroke-width="1" opacity="0.35" stroke-dasharray="4 4"/>
-  <path d="M155,145 Q200,118 245,145" fill="none" stroke="#8BC34A" stroke-width="1" opacity="0.25" stroke-dasharray="4 4"/>
+  <!-- sensor cone -->
+  <path d="M200,158 L105,75 Q200,32 295,75 Z" fill="url(#cone)"/>
+  <path d="M200,158 L105,75 Q200,32 295,75" fill="none" stroke="#76FF03" stroke-width="2.5" opacity="0.8"/>
+  <path d="M140,97 Q200,66 260,97" fill="none" stroke="#76FF03" stroke-width="1.5" opacity="0.4" stroke-dasharray="5 4"/>
 
-  <!-- car body — bigger and clearer -->
-  <rect x="140" y="185" width="120" height="82" rx="22" fill="url(#bodyGrad)" stroke="#4A6A72" stroke-width="2.5"/>
-  <!-- windshield -->
-  <rect x="155" y="194" width="90" height="24" rx="8" fill="#1A2A30" stroke="#3A5258" stroke-width="1.5"/>
-  <!-- rear window -->
-  <rect x="160" y="246" width="80" height="13" rx="5" fill="#1A2A30" stroke="#3A5258" stroke-width="1.5"/>
-  <!-- wheel hints -->
-  <rect x="136" y="200" width="8" height="16" rx="3" fill="#2A3E44" stroke="#4A6A72" stroke-width="1"/>
-  <rect x="136" y="240" width="8" height="16" rx="3" fill="#2A3E44" stroke="#4A6A72" stroke-width="1"/>
-  <rect x="256" y="200" width="8" height="16" rx="3" fill="#2A3E44" stroke="#4A6A72" stroke-width="1"/>
-  <rect x="256" y="240" width="8" height="16" rx="3" fill="#2A3E44" stroke="#4A6A72" stroke-width="1"/>
+  <!-- car body -->
+  <rect x="145" y="158" width="110" height="72" rx="20" fill="url(#bodyGrad)" stroke="#5A8A96" stroke-width="3"/>
+  <rect x="159" y="166" width="82" height="20" rx="7" fill="#1A2E34" stroke="#4A7680" stroke-width="2"/>
+  <rect x="163" y="210" width="74" height="12" rx="5" fill="#1A2E34" stroke="#4A7680" stroke-width="2"/>
+  <!-- wheels -->
+  <rect x="140" y="174" width="9" height="16" rx="3.5" fill="#2E4A52" stroke="#5A8A96" stroke-width="1.5"/>
+  <rect x="140" y="204" width="9" height="16" rx="3.5" fill="#2E4A52" stroke="#5A8A96" stroke-width="1.5"/>
+  <rect x="251" y="174" width="9" height="16" rx="3.5" fill="#2E4A52" stroke="#5A8A96" stroke-width="1.5"/>
+  <rect x="251" y="204" width="9" height="16" rx="3.5" fill="#2E4A52" stroke="#5A8A96" stroke-width="1.5"/>
 
-  <!-- left eye — bigger, brighter -->
-  <g filter="url(#glow)">
-    <circle cx="172" cy="168" r="22" fill="#111D22" stroke="#8BC34A" stroke-width="3"/>
-    <circle cx="172" cy="168" r="11" fill="#0A1215" stroke="#8BC34A" stroke-width="2"/>
-    <circle cx="172" cy="168" r="5.5" fill="#8BC34A"/>
-    <circle cx="169" cy="165" r="2.5" fill="#C5E1A5"/>
+  <!-- left eye -->
+  <g filter="url(#eyeGlow)">
+    <circle cx="176" cy="142" r="21" fill="#0E1A1E" stroke="#76FF03" stroke-width="3.5"/>
+    <circle cx="176" cy="142" r="10.5" fill="#080E10" stroke="#76FF03" stroke-width="2.5"/>
+    <circle cx="176" cy="142" r="5.2" fill="#76FF03"/>
+    <circle cx="173" cy="139" r="2.2" fill="#CCFF90"/>
   </g>
 
-  <!-- right eye — bigger, brighter -->
-  <g filter="url(#glow)">
-    <circle cx="228" cy="168" r="22" fill="#111D22" stroke="#8BC34A" stroke-width="3"/>
-    <circle cx="228" cy="168" r="11" fill="#0A1215" stroke="#8BC34A" stroke-width="2"/>
-    <circle cx="228" cy="168" r="5.5" fill="#8BC34A"/>
-    <circle cx="225" cy="165" r="2.5" fill="#C5E1A5"/>
+  <!-- right eye -->
+  <g filter="url(#eyeGlow)">
+    <circle cx="224" cy="142" r="21" fill="#0E1A1E" stroke="#76FF03" stroke-width="3.5"/>
+    <circle cx="224" cy="142" r="10.5" fill="#080E10" stroke="#76FF03" stroke-width="2.5"/>
+    <circle cx="224" cy="142" r="5.2" fill="#76FF03"/>
+    <circle cx="221" cy="139" r="2.2" fill="#CCFF90"/>
   </g>
 
-  <!-- radar/detection dots — bigger, brighter -->
-  <circle cx="108" cy="205" r="3.5" fill="#EF5350" opacity="0.8"/>
-  <circle cx="125" cy="155" r="3" fill="#EF5350" opacity="0.7"/>
-  <circle cx="285" cy="195" r="3.5" fill="#EF5350" opacity="0.8"/>
-  <circle cx="295" cy="240" r="3" fill="#EF5350" opacity="0.6"/>
-  <circle cx="140" cy="130" r="2.5" fill="#EF5350" opacity="0.6"/>
-  <circle cx="260" cy="135" r="2.5" fill="#EF5350" opacity="0.65"/>
+  <!-- radar dots -->
+  <circle cx="112" cy="180" r="4" fill="#FF1744" opacity="0.9"/>
+  <circle cx="128" cy="125" r="3.5" fill="#FF1744" opacity="0.8"/>
+  <circle cx="280" cy="172" r="4" fill="#FF1744" opacity="0.9"/>
+  <circle cx="288" cy="210" r="3.5" fill="#FF1744" opacity="0.7"/>
+  <circle cx="145" cy="105" r="3" fill="#FF1744" opacity="0.7"/>
+  <circle cx="255" cy="108" r="3" fill="#FF1744" opacity="0.75"/>
 
-  <!-- channel name — bigger, bolder -->
-  <text x="200" y="348" text-anchor="middle" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-weight="800" font-size="32" fill="#F0F4F0" letter-spacing="0.02em">자율주행 연구일지</text>
-  <text x="200" y="376" text-anchor="middle" font-family="sans-serif" font-weight="400" font-size="12" fill="#78908C" letter-spacing="0.1em">AUTONOMOUS DRIVING LAB NOTES</text>
+  <!-- text -->
+  <text x="200" y="306" text-anchor="middle" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-weight="900" font-size="32" fill="#FFFFFF" letter-spacing="0.01em">자율주행 연구일지</text>
+  <text x="200" y="336" text-anchor="middle" font-family="sans-serif" font-weight="500" font-size="12" fill="#90A4AE" letter-spacing="0.12em">AUTONOMOUS DRIVING</text>
+  <text x="200" y="356" text-anchor="middle" font-family="sans-serif" font-weight="500" font-size="12" fill="#90A4AE" letter-spacing="0.12em">LAB NOTES</text>
 </svg>
