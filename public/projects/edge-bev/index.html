@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Real-time BEV on Edge — Junhan Kim</title>
+<meta name="description" content="Real-time BEV perception on edge devices: ONNX, TensorRT, Jetson deployment with 8x latency reduction.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0A0E10;--panel:#111719;--line:#222D31;--line-soft:#1A2326;--text:#DDE3E4;--mute:#78878C;--drivable:#6F9D5C;--walkway:#7E88C0;--stopline:#CF5F6B;--ego:#F3F0E6}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--text);font-family:"IBM Plex Sans",system-ui,sans-serif;font-weight:300;font-size:16px;line-height:1.72;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--walkway);outline-offset:3px}
+
+.topbar{border-bottom:1px solid var(--line-soft);padding:1rem 0}
+.topbar .wrap{display:flex;align-items:center;gap:1rem}
+.back{color:var(--mute);text-decoration:none;font-size:.85rem;display:flex;align-items:center;gap:.4rem;transition:color .15s}
+.back:hover{color:var(--text)}
+.topbar-name{font-family:"Space Grotesk",sans-serif;font-weight:500;font-size:.95rem;color:var(--ego);margin-left:auto}
+
+.wrap{max-width:1020px;margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+
+.proj-hero{padding:clamp(48px,8vh,96px) 0 clamp(40px,6vh,72px);border-bottom:1px solid var(--line-soft)}
+.proj-hero .badge{display:inline-block;padding:.3em .9em;border:1px solid rgba(207,95,107,.5);color:var(--stopline);font-size:.78rem;margin-bottom:1.2rem}
+.proj-hero h1{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:clamp(1.8rem,5vw,3rem);line-height:1.1;margin:0 0 .5rem;color:var(--ego)}
+.proj-hero .subtitle{font-size:clamp(1rem,2.5vw,1.15rem);color:#B9C3C5;margin:0 0 1.5rem;max-width:60ch}
+.proj-hero .meta{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;font-size:.85rem;color:var(--mute)}
+
+section{padding:clamp(48px,8vh,80px) 0;border-bottom:1px solid var(--line-soft)}
+section:last-of-type{border-bottom:none}
+h2{font-family:"Space Grotesk",sans-serif;font-weight:500;font-size:clamp(1.3rem,3.5vw,1.7rem);margin:0 0 1.5rem;color:#EDF1F1}
+p{max-width:68ch;line-height:1.82;color:#C6CFD1;margin:.6rem 0}
+
+.results{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--line-soft);margin:2rem 0;border:1px solid var(--line-soft)}
+.result-card{background:var(--ink);padding:1.3rem 1.4rem}
+.result-card dt{color:var(--mute);font-size:.78rem;margin-bottom:.4rem}
+.result-card dd{margin:0;font-family:"Space Grotesk",sans-serif;font-size:1.35rem;color:#EDF1F1;line-height:1.2}
+.result-card dd.hi{color:var(--drivable)}
+
+.tag-list{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.5rem;margin:1.5rem 0}
+.tag-list li{font-size:.82rem;padding:.35em .85em;border:1px solid var(--line);color:#CBD4D5;font-family:"Space Grotesk",sans-serif}
+
+.pipeline{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:1.5rem 0}
+.pipeline .step{padding:.45em 1em;border:1px solid var(--line);color:#CBD4D5;font-size:.82rem;font-family:"Space Grotesk",sans-serif}
+.pipeline .arrow{color:var(--mute);font-size:.9rem}
+
+.pub-list{list-style:none;padding:0;margin:1.5rem 0}
+.pub-list li{padding:.9rem 0;border-bottom:1px solid var(--line-soft);font-size:.95rem;color:#BAC4C6}
+.pub-list li:last-child{border-bottom:none}
+.pub-list .venue{color:var(--mute);font-size:.85rem}
+
+footer{padding:2.6rem 0 3.4rem;color:var(--mute);font-size:.8rem;border-top:1px solid var(--line-soft)}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="wrap">
+    <a class="back" href="../../">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.4"/></svg>
+      Back
+    </a>
+    <span class="topbar-name">Junhan Kim</span>
+  </div>
+</nav>
+
+<header class="proj-hero">
+  <div class="wrap">
+    <span class="badge">Edge Deployment · KSAE 2026</span>
+    <h1>Real-time BEV on Edge</h1>
+    <p class="subtitle">Lightweight BEV drivable area perception optimized for NVIDIA Jetson edge devices via ONNX export and TensorRT acceleration</p>
+    <div class="meta">
+      <span>Co-author</span>
+      <span>2025 — 2026</span>
+      <span>KSAE Spring Conference</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="wrap">
+    <h2>Overview</h2>
+    <p>
+      Research models that report impressive accuracy on desktop GPUs often cannot run within
+      the latency budget of an actual vehicle. This project bridges the gap between lab
+      accuracy and on-road deployment by taking a BEV segmentation model through the full
+      optimization pipeline to NVIDIA Jetson boards.
+    </p>
+    <p>
+      The goal was not just to demonstrate that deployment is possible, but to systematically
+      measure where latency is spent and how much accuracy is traded at each optimization step.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Optimization pipeline</h2>
+    <div class="pipeline">
+      <span class="step">PyTorch model</span>
+      <span class="arrow">→</span>
+      <span class="step">ONNX export</span>
+      <span class="arrow">→</span>
+      <span class="step">FP16 quantization</span>
+      <span class="arrow">→</span>
+      <span class="step">TensorRT engine</span>
+      <span class="arrow">→</span>
+      <span class="step">Jetson deployment</span>
+    </div>
+    <p>
+      The model was exported to ONNX with static input shapes, then quantized to FP16
+      precision. TensorRT performed layer fusion, kernel auto-tuning, and memory planning
+      specific to each Jetson board's GPU architecture.
+    </p>
+    <p>
+      Measurements confirmed that the same model code differs by a factor of two in latency
+      across Jetson board generations, emphasizing the importance of board-specific profiling
+      rather than relying on theoretical FLOP counts.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Results</h2>
+    <dl class="results">
+      <div class="result-card"><dt>IoU retained</dt><dd>~72%</dd></div>
+      <div class="result-card"><dt>AGX Orin latency</dt><dd class="hi">44 ms</dd></div>
+      <div class="result-card"><dt>AGX Thor latency</dt><dd class="hi">22 ms</dd></div>
+      <div class="result-card"><dt>Baseline latency</dt><dd>352 ms</dd></div>
+    </dl>
+    <p>
+      The optimized model achieves an 8× speedup on AGX Orin (352 ms → 44 ms) and a 16×
+      speedup on AGX Thor (352 ms → 22 ms), while retaining approximately 72% IoU — well
+      within the operational requirements for real-time drivable area perception.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Related publication</h2>
+    <ul class="pub-list">
+      <li>
+        Development of a Lightweight BEV Drivable Area Model for Real-Time Inference on Edge Devices
+        <div class="venue">KSAE Spring Conference, 2026</div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Junhan Kim</div>
+</footer>
+
+</body>
+</html>

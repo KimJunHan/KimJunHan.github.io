@@ -1,0 +1,140 @@
+.pub-section-title {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+
+  .pub-count {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+.pub-table-wrap {
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+}
+
+.pub-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 650px;
+  font-size: 0.9rem;
+
+  th,
+  td {
+    text-align: left;
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    vertical-align: top;
+  }
+
+  th {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+    font-size: 0.8rem;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  td {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  td a {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s;
+
+    &:hover {
+      border-color: #5c7cfa;
+    }
+  }
+
+  td.year {
+    font-family: "Lato", monospace;
+    color: rgba(255, 255, 255, 0.4);
+    white-space: nowrap;
+  }
+
+  td.first-author {
+    color: #9dc188;
+  }
+
+  tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+  }
+}
+
+.patents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.patent-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 1.3rem 1.4rem;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: rgba(92, 124, 250, 0.25);
+  }
+
+  .patent-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 0.6rem;
+  }
+
+  h3 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 0.5rem;
+    line-height: 1.5;
+  }
+
+  .patent-number {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.35);
+    font-family: "Lato", monospace;
+  }
+}
+
+.light-mode {
+  .pub-section-title .pub-count {
+    color: #888;
+  }
+
+  .pub-table-wrap {
+    border-color: rgba(0, 0, 0, 0.08);
+  }
+
+  .patent-card {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.08);
+
+    .patent-meta {
+      color: #888;
+    }
+
+    h3 {
+      color: #333;
+    }
+
+    .patent-number {
+      color: #999;
+    }
+  }
+}

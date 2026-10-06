@@ -1,0 +1,193 @@
+.contact_wrapper svg {
+  font-size: 1.4em;
+  vertical-align: middle;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+/* ---------- Contact Form ---------- */
+.contact-form {
+  padding-top: 20px;
+  padding-bottom: 30px;
+
+  button {
+    float: right;
+    background-color: white;
+    color: #0d1116;
+    font-weight: 600;
+    padding: 10px 28px;
+  }
+
+  button:hover {
+    background-color: #5c7cfa;
+    color: white;
+  }
+
+  fieldset {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .MuiInputBase-root {
+    color: white;
+  }
+
+  .MuiInputLabel-root {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .MuiOutlinedInput-notchedOutline {
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: rgba(255, 255, 255, 0.35);
+  }
+
+  .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #5c7cfa;
+  }
+
+  .MuiInputLabel-root.Mui-focused {
+    color: #5c7cfa;
+  }
+}
+
+label {
+  font-size: 1.1rem;
+  font-family: "Lato", sans-serif;
+}
+
+.form-flex {
+  display: flex;
+  gap: 15px;
+  padding-bottom: 15px;
+}
+
+.form-flex .MuiFormControl-root {
+  width: 100%;
+}
+
+form {
+  width: 100% !important;
+}
+
+.body-form {
+  width: 100% !important;
+  margin-bottom: 15px !important;
+}
+
+/* ---------- Contact Links ---------- */
+.contact-links-title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 1rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+  text-decoration: none !important;
+
+  &:hover {
+    border-color: rgba(92, 124, 250, 0.35);
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-label {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 0.25rem;
+  }
+
+  .contact-value {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+  }
+
+  &.affiliation {
+    cursor: default;
+  }
+}
+
+/* ---------- Light Mode ---------- */
+.light-mode {
+  .contact-form {
+    fieldset {
+      border-color: rgba(0, 0, 0, 0.15);
+    }
+
+    .MuiInputBase-root {
+      color: #0d1116;
+    }
+
+    .MuiInputLabel-root {
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    .MuiOutlinedInput-notchedOutline {
+      border-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+      border-color: rgba(0, 0, 0, 0.4);
+    }
+
+    button {
+      background-color: #0d1116;
+      color: white;
+    }
+
+    button:hover {
+      background-color: #5c7cfa;
+    }
+  }
+
+  .contact-links-title {
+    color: #555;
+  }
+
+  .contact-item {
+    border-color: rgba(0, 0, 0, 0.08);
+
+    &:hover {
+      border-color: #5c7cfa;
+    }
+
+    .contact-label {
+      color: #888;
+    }
+
+    .contact-value {
+      color: #333;
+    }
+  }
+}
+
+/* ---------- Responsive ---------- */
+@media screen {
+  @media (max-width: 600px) {
+    .form-flex {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+}

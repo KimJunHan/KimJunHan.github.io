@@ -1,0 +1,15 @@
+{
+  "short_name": "Junhan Kim",
+  "name": "Junhan Kim - Autonomous Driving Perception",
+  "icons": [
+    {
+      "src": "logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0d1116",
+  "background_color": "#0d1116"
+}

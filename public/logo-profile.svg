@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5CCEC5"/>
+      <stop offset="100%" stop-color="#1A8A80"/>
+    </linearGradient>
+    <linearGradient id="bodyShine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.12"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.06"/>
+    </linearGradient>
+    <linearGradient id="cone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#76FF03" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#76FF03" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="eyeGlow">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- bg -->
+  <rect width="400" height="400" rx="40" fill="#080C0E"/>
+  <rect width="400" height="400" rx="40" fill="none" stroke="#2E4448" stroke-width="3"/>
+
+  <!-- road -->
+  <rect x="30" y="225" width="340" height="40" rx="4" fill="#141E1E"/>
+  <line x1="70" y1="245" x2="120" y2="245" stroke="#3E5555" stroke-width="4" stroke-dasharray="10 8"/>
+  <line x1="150" y1="245" x2="200" y2="245" stroke="#3E5555" stroke-width="4" stroke-dasharray="10 8"/>
+  <line x1="230" y1="245" x2="280" y2="245" stroke="#3E5555" stroke-width="4" stroke-dasharray="10 8"/>
+  <line x1="310" y1="245" x2="350" y2="245" stroke="#3E5555" stroke-width="4" stroke-dasharray="10 8"/>
+
+  <!-- sensor cone -->
+  <path d="M200,150 L108,72 Q200,28 292,72 Z" fill="url(#cone)"/>
+  <path d="M200,150 L108,72 Q200,28 292,72" fill="none" stroke="#76FF03" stroke-width="2.5" opacity="0.8"/>
+  <path d="M142,93 Q200,60 258,93" fill="none" stroke="#76FF03" stroke-width="1.5" opacity="0.4" stroke-dasharray="5 4"/>
+
+  <!-- tesla-style car body -->
+  <path d="
+    M200,150
+    Q214,150 222,154 L233,158 Q248,165 251,176
+    L253,190 Q255,205 253,215
+    L251,222 Q248,230 237,233 L222,235 Q214,237 200,237
+    Q186,237 178,235 L163,233 Q152,230 149,222
+    L147,215 Q145,205 147,190
+    L149,176 Q152,165 167,158 L178,154 Q186,150 200,150 Z
+  " fill="url(#bodyGrad)" stroke="#80E8DD" stroke-width="2.5"/>
+  <path d="
+    M200,150
+    Q214,150 222,154 L233,158 Q248,165 251,176
+    L253,190 Q255,205 253,215
+    L251,222 Q248,230 237,233 L222,235 Q214,237 200,237
+    Q186,237 178,235 L163,233 Q152,230 149,222
+    L147,215 Q145,205 147,190
+    L149,176 Q152,165 167,158 L178,154 Q186,150 200,150 Z
+  " fill="url(#bodyShine)"/>
+
+  <!-- panoramic glass roof -->
+  <path d="M184,160 Q200,157 216,160 L224,167 Q228,172 227,179 L224,184 Q200,187 176,184 L173,179 Q172,172 176,167 Z" fill="#0E2828" stroke="#4DB6AC" stroke-width="1.8"/>
+  <!-- rear window -->
+  <path d="M183,217 Q200,215 217,217 L219,223 Q217,227 200,228 Q183,227 181,223 Z" fill="#0E2828" stroke="#4DB6AC" stroke-width="1.8"/>
+
+  <!-- center ridge -->
+  <line x1="200" y1="184" x2="200" y2="217" stroke="#4DB6AC" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- wheels -->
+  <ellipse cx="152" cy="180" rx="5" ry="9" fill="#1A3838" stroke="#80E8DD" stroke-width="1.8"/>
+  <ellipse cx="152" cy="215" rx="5" ry="9" fill="#1A3838" stroke="#80E8DD" stroke-width="1.8"/>
+  <ellipse cx="248" cy="180" rx="5" ry="9" fill="#1A3838" stroke="#80E8DD" stroke-width="1.8"/>
+  <ellipse cx="248" cy="215" rx="5" ry="9" fill="#1A3838" stroke="#80E8DD" stroke-width="1.8"/>
+
+  <!-- left eye -->
+  <g filter="url(#eyeGlow)">
+    <circle cx="178" cy="136" r="19" fill="#0E1A1E" stroke="#76FF03" stroke-width="3.5"/>
+    <circle cx="178" cy="136" r="9.5" fill="#080E10" stroke="#76FF03" stroke-width="2.5"/>
+    <circle cx="178" cy="136" r="4.8" fill="#76FF03"/>
+    <circle cx="175.5" cy="133.5" r="2" fill="#CCFF90"/>
+  </g>
+
+  <!-- right eye -->
+  <g filter="url(#eyeGlow)">
+    <circle cx="222" cy="136" r="19" fill="#0E1A1E" stroke="#76FF03" stroke-width="3.5"/>
+    <circle cx="222" cy="136" r="9.5" fill="#080E10" stroke="#76FF03" stroke-width="2.5"/>
+    <circle cx="222" cy="136" r="4.8" fill="#76FF03"/>
+    <circle cx="219.5" cy="133.5" r="2" fill="#CCFF90"/>
+  </g>
+
+  <!-- radar dots -->
+  <circle cx="115" cy="178" r="4" fill="#FF1744" opacity="0.9"/>
+  <circle cx="130" cy="118" r="3.5" fill="#FF1744" opacity="0.8"/>
+  <circle cx="278" cy="170" r="4" fill="#FF1744" opacity="0.9"/>
+  <circle cx="285" cy="212" r="3.5" fill="#FF1744" opacity="0.7"/>
+  <circle cx="148" cy="100" r="3" fill="#FF1744" opacity="0.7"/>
+  <circle cx="252" cy="103" r="3" fill="#FF1744" opacity="0.75"/>
+
+  <!-- text -->
+  <text x="200" y="303" text-anchor="middle" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-weight="900" font-size="32" fill="#FFFFFF" letter-spacing="0.01em">자율주행 연구일지</text>
+  <text x="200" y="333" text-anchor="middle" font-family="sans-serif" font-weight="500" font-size="12" fill="#90A4AE" letter-spacing="0.12em">AUTONOMOUS DRIVING</text>
+  <text x="200" y="353" text-anchor="middle" font-family="sans-serif" font-weight="500" font-size="12" fill="#90A4AE" letter-spacing="0.12em">LAB NOTES</text>
+</svg>

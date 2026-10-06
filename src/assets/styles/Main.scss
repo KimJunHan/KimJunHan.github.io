@@ -1,0 +1,350 @@
+.dark-mode .about-section {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.about-section {
+  display: flex;
+  gap: 30px;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 0px 15%;
+  min-height: 700px;
+  background: linear-gradient(135deg, #0d1116 0%, #1a1f2e 40%, #0d1116 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        ellipse at 20% 50%,
+        rgba(92, 124, 250, 0.08) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse at 80% 30%,
+        rgba(111, 157, 92, 0.06) 0%,
+        transparent 50%
+      );
+    pointer-events: none;
+  }
+}
+
+.about-section .content {
+  text-align: left;
+  z-index: 2;
+
+  .social_icons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    color: white;
+
+    svg {
+      font-size: 1.8em;
+    }
+  }
+
+  .mobile_social_icons {
+    display: none;
+  }
+
+  p {
+    font-size: 1.5em;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+  }
+
+  h1 {
+    font-size: 5em;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+  }
+}
+
+.about-section .image-wrapper {
+  z-index: 2;
+  img {
+    width: 150px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.15);
+  }
+}
+
+.about-content {
+  width: 100%;
+}
+
+.section-title {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 0.5rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: #5c7cfa;
+    border-radius: 2px;
+  }
+}
+
+.about-text {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  max-width: 800px;
+  opacity: 0.85;
+  margin-top: 0.5rem;
+}
+
+/* ---------- Research Journey Timeline ---------- */
+.journey-timeline {
+  position: relative;
+  padding-left: 28px;
+  margin-top: 1.5rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.journey-item {
+  position: relative;
+  padding-bottom: 2rem;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.journey-marker {
+  position: absolute;
+  left: -24px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: #0d1116;
+
+  &.active {
+    border-color: #5c7cfa;
+    background: #5c7cfa;
+    box-shadow: 0 0 12px rgba(92, 124, 250, 0.4);
+  }
+}
+
+.journey-content {
+  .journey-date {
+    font-size: 0.78rem;
+    color: #5c7cfa;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0.3rem 0 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  p {
+    font-size: 0.92rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+    max-width: 700px;
+  }
+}
+
+/* ---------- Facts Grid ---------- */
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 2.5rem;
+}
+
+.fact-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.2rem 1.4rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: rgba(92, 124, 250, 0.3);
+  }
+
+  .fact-value {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: white;
+    font-family: "Lato", sans-serif;
+  }
+
+  .fact-label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 0.3rem;
+  }
+
+  .fact-sub {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.35);
+    margin-top: 0.2rem;
+  }
+}
+
+/* ---------- Light Mode ---------- */
+.light-mode {
+  .journey-timeline::before {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  .journey-marker {
+    border-color: rgba(0, 0, 0, 0.15);
+    background: #f8f9fa;
+
+    &.active {
+      border-color: #5c7cfa;
+      background: #5c7cfa;
+    }
+  }
+
+  .journey-content {
+    h3 {
+      color: #0d1116;
+    }
+
+    p {
+      color: #555;
+    }
+  }
+
+  .section-title {
+    color: #0d1116;
+  }
+
+  .about-text {
+    color: #444;
+  }
+}
+
+/* ---------- Responsive ---------- */
+@media screen {
+  @media (max-width: 567px) {
+    .nav-left {
+      padding-top: 20px;
+      float: left;
+    }
+
+    .nav-left img {
+      height: 35px;
+    }
+
+    .nav-right {
+      float: right;
+    }
+
+    .nav-right li {
+      padding: 10px 15px;
+      list-style: none;
+      font-size: 13px;
+      color: white;
+      width: 10%;
+    }
+
+    .nav-right ul {
+      list-style-type: none;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    body {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .about-section h1 {
+      font-size: 3em !important;
+      text-align: left;
+    }
+
+    .about-section p {
+      text-align: left;
+    }
+
+    .container {
+      display: initial;
+    }
+
+    .social_icons {
+      display: none !important;
+    }
+
+    .mobile_social_icons {
+      padding-top: 10px;
+      display: flex !important;
+      flex-direction: row;
+      gap: 10px;
+      color: white;
+
+      svg {
+        font-size: 1.8em;
+      }
+    }
+
+    .about-section {
+      padding-top: 150px;
+      display: block;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
+    .about-section .content {
+      width: 90%;
+      padding-left: 5%;
+      padding-right: 5%;
+      padding-bottom: 5%;
+    }
+
+    .about-section .image-wrapper {
+      padding-left: 5%;
+      width: 100%;
+    }
+
+    .facts-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .facts-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
