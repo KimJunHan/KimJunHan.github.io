@@ -4,7 +4,7 @@ import "../assets/styles/Publications.scss";
 
 const publications = [
   {
-    title: "SegMam: Multi-Scale Deformable Cross-Mamba Attention with Pseudo-LiDAR from Multi-Camera Depth for BEV Segmentation",
+    title: "SegMam: Camera + Pseudo-LiDAR BEV Segmentation with Lightweight Self-Mamba & Cross-Mamba Blocks",
     venue: "IEEE Access (SCIE)",
     role: "First author",
     year: "2026",

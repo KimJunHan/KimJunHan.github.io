@@ -63,6 +63,13 @@ function Project() {
           </a>
         </div>
 
+      </div>
+
+      <h1 style={{ marginTop: "3rem" }}>Industry Projects</h1>
+      <p style={{ color: "#666", marginBottom: "1.5rem" }}>
+        Anyractive &amp; National R&amp;D (2021 &mdash; 2024)
+      </p>
+      <div className="projects-grid">
         <div className="project">
           <a href={process.env.PUBLIC_URL + "/projects/vehicle-pipeline/"}>
             <div className="project-card zoom">
@@ -81,13 +88,6 @@ function Project() {
             </div>
           </a>
         </div>
-      </div>
-
-      <h1 style={{ marginTop: "3rem" }}>Industry Projects</h1>
-      <p style={{ color: "#666", marginBottom: "1.5rem" }}>
-        Hyundai Mobis advance vehicle projects at Anyractive (2021 &mdash; 2024)
-      </p>
-      <div className="projects-grid">
         <div className="project">
           <a href={process.env.PUBLIC_URL + "/projects/mvision-hi/"}>
             <div className="project-card zoom">
