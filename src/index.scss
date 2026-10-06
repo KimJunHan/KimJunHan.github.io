@@ -101,6 +101,32 @@ button {
   justify-content: center;
 }
 
+/* ---------- Section Dividers ---------- */
+#expertise,
+#history,
+#projects,
+#publications,
+#contact {
+  position: relative;
+  padding-top: 2rem;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.08) 20%,
+      rgba(92, 124, 250, 0.15) 50%,
+      rgba(255, 255, 255, 0.08) 80%,
+      transparent 100%
+    );
+    margin-bottom: 1rem;
+  }
+}
+
 .light-mode {
   background-color: #f8f9fa;
 
@@ -203,6 +229,23 @@ button {
     }
     .contact-label {
       color: #666;
+    }
+  }
+
+  #expertise,
+  #history,
+  #projects,
+  #publications,
+  #contact {
+    &::before {
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(0, 0, 0, 0.06) 20%,
+        rgba(92, 124, 250, 0.12) 50%,
+        rgba(0, 0, 0, 0.06) 80%,
+        transparent 100%
+      );
     }
   }
 }

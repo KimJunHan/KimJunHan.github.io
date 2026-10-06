@@ -158,17 +158,24 @@ function Contact() {
               </div>
             </a>
 
-            <div className="contact-item affiliation">
+            <a
+              href="https://vilab.kookmin.ac.kr/vilab/index.do"
+              target="_blank"
+              rel="noreferrer"
+              className="contact-item"
+            >
               <SchoolIcon />
               <div>
                 <span className="contact-label">Affiliation</span>
                 <span className="contact-value">
+                  Vehicle Intelligence Laboratory (VILAB)
+                  <br />
                   Graduate School of Automobile and Mobility
                   <br />
                   Kookmin University, Seoul
                 </span>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>
