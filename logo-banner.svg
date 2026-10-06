@@ -1,83 +1,111 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2560 1440" width="2560" height="1440">
   <defs>
     <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#2A3E44"/>
-      <stop offset="100%" stop-color="#152228"/>
+      <stop offset="0%" stop-color="#5CCEC5"/>
+      <stop offset="100%" stop-color="#1A8A80"/>
     </linearGradient>
-    <linearGradient id="sensorGlow" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#8BC34A" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#8BC34A" stop-opacity="0.02"/>
+    <linearGradient id="bodyShine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.12"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.06"/>
+    </linearGradient>
+    <linearGradient id="cone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#76FF03" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#76FF03" stop-opacity="0"/>
     </linearGradient>
     <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
       <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#1A2226" stroke-width="1"/>
     </pattern>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <filter id="eyeGlow">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
 
   <!-- background -->
-  <rect width="2560" height="1440" fill="#0A0E10"/>
+  <rect width="2560" height="1440" fill="#080C0E"/>
   <rect width="2560" height="1440" fill="url(#grid)"/>
 
   <!-- road -->
-  <rect x="0" y="790" width="2560" height="160" fill="#1A2226"/>
-  <line x1="150" y1="870" x2="280" y2="870" stroke="#3A4A4E" stroke-width="5" stroke-dasharray="14 10"/>
-  <line x1="380" y1="870" x2="510" y2="870" stroke="#3A4A4E" stroke-width="5" stroke-dasharray="14 10"/>
-  <line x1="610" y1="870" x2="740" y2="870" stroke="#3A4A4E" stroke-width="5" stroke-dasharray="14 10"/>
-  <line x1="840" y1="870" x2="970" y2="870" stroke="#3A4A4E" stroke-width="5" stroke-dasharray="14 10"/>
-  <!-- drivable area tint -->
-  <rect x="0" y="790" width="2560" height="160" fill="#8BC34A" opacity="0.04"/>
+  <rect x="0" y="790" width="2560" height="160" fill="#141E1E"/>
+  <line x1="150" y1="870" x2="280" y2="870" stroke="#3E5555" stroke-width="5" stroke-dasharray="14 10"/>
+  <line x1="380" y1="870" x2="510" y2="870" stroke="#3E5555" stroke-width="5" stroke-dasharray="14 10"/>
+  <line x1="610" y1="870" x2="740" y2="870" stroke="#3E5555" stroke-width="5" stroke-dasharray="14 10"/>
+  <line x1="840" y1="870" x2="970" y2="870" stroke="#3E5555" stroke-width="5" stroke-dasharray="14 10"/>
+  <rect x="0" y="790" width="2560" height="160" fill="#76FF03" opacity="0.03"/>
 
   <!-- sensor cone -->
-  <path d="M720,585 L560,380 Q720,290 880,380 Z" fill="url(#sensorGlow)"/>
-  <path d="M720,585 L560,380 Q720,290 880,380" fill="none" stroke="#8BC34A" stroke-width="3" opacity="0.6"/>
-  <path d="M620,440 Q720,380 820,440" fill="none" stroke="#8BC34A" stroke-width="1.5" opacity="0.3" stroke-dasharray="6 6"/>
+  <path d="M720,560 L530,340 Q720,230 910,340 Z" fill="url(#cone)"/>
+  <path d="M720,560 L530,340 Q720,230 910,340" fill="none" stroke="#76FF03" stroke-width="3" opacity="0.8"/>
+  <path d="M600,400 Q720,340 840,400" fill="none" stroke="#76FF03" stroke-width="2" opacity="0.4" stroke-dasharray="6 5"/>
 
-  <!-- car body -->
-  <rect x="650" y="585" width="140" height="100" rx="28" fill="url(#bodyGrad)" stroke="#4A6A72" stroke-width="3.5"/>
-  <rect x="668" y="596" width="104" height="28" rx="10" fill="#1A2A30" stroke="#3A5258" stroke-width="2"/>
-  <rect x="673" y="658" width="94" height="16" rx="6" fill="#1A2A30" stroke="#3A5258" stroke-width="2"/>
+  <!-- tesla-style car body -->
+  <path d="
+    M720,560
+    Q740,560 752,565 L768,571 Q790,580 794,596
+    L797,616 Q800,640 797,655
+    L794,667 Q790,678 776,682 L752,685 Q740,688 720,688
+    Q700,688 688,685 L664,682 Q650,678 646,667
+    L643,655 Q640,640 643,616
+    L646,596 Q650,580 672,571 L688,565 Q700,560 720,560 Z
+  " fill="url(#bodyGrad)" stroke="#80E8DD" stroke-width="3"/>
+  <path d="
+    M720,560
+    Q740,560 752,565 L768,571 Q790,580 794,596
+    L797,616 Q800,640 797,655
+    L794,667 Q790,678 776,682 L752,685 Q740,688 720,688
+    Q700,688 688,685 L664,682 Q650,678 646,667
+    L643,655 Q640,640 643,616
+    L646,596 Q650,580 672,571 L688,565 Q700,560 720,560 Z
+  " fill="url(#bodyShine)"/>
+
+  <!-- panoramic glass roof -->
+  <path d="M697,572 Q720,568 743,572 L754,581 Q759,588 758,598 L754,605 Q720,609 686,605 L682,598 Q681,588 686,581 Z" fill="#0E2828" stroke="#4DB6AC" stroke-width="2.5"/>
+  <!-- rear window -->
+  <path d="M695,660 Q720,657 745,660 L748,668 Q745,674 720,676 Q695,674 692,668 Z" fill="#0E2828" stroke="#4DB6AC" stroke-width="2.5"/>
+
+  <!-- center ridge -->
+  <line x1="720" y1="605" x2="720" y2="660" stroke="#4DB6AC" stroke-width="1" opacity="0.5"/>
+
   <!-- wheels -->
-  <rect x="644" y="608" width="10" height="20" rx="4" fill="#2A3E44" stroke="#4A6A72" stroke-width="1.5"/>
-  <rect x="644" y="650" width="10" height="20" rx="4" fill="#2A3E44" stroke="#4A6A72" stroke-width="1.5"/>
-  <rect x="786" y="608" width="10" height="20" rx="4" fill="#2A3E44" stroke="#4A6A72" stroke-width="1.5"/>
-  <rect x="786" y="650" width="10" height="20" rx="4" fill="#2A3E44" stroke="#4A6A72" stroke-width="1.5"/>
+  <ellipse cx="650" cy="600" rx="7" ry="13" fill="#1A3838" stroke="#80E8DD" stroke-width="2.2"/>
+  <ellipse cx="650" cy="655" rx="7" ry="13" fill="#1A3838" stroke="#80E8DD" stroke-width="2.2"/>
+  <ellipse cx="790" cy="600" rx="7" ry="13" fill="#1A3838" stroke="#80E8DD" stroke-width="2.2"/>
+  <ellipse cx="790" cy="655" rx="7" ry="13" fill="#1A3838" stroke="#80E8DD" stroke-width="2.2"/>
 
   <!-- left eye -->
-  <g filter="url(#glow)">
-    <circle cx="695" cy="562" r="28" fill="#111D22" stroke="#8BC34A" stroke-width="4"/>
-    <circle cx="695" cy="562" r="14" fill="#0A1215" stroke="#8BC34A" stroke-width="2.5"/>
-    <circle cx="695" cy="562" r="7" fill="#8BC34A"/>
-    <circle cx="691" cy="558" r="3" fill="#C5E1A5"/>
+  <g filter="url(#eyeGlow)">
+    <circle cx="695" cy="540" r="30" fill="#0E1A1E" stroke="#76FF03" stroke-width="4.5"/>
+    <circle cx="695" cy="540" r="15" fill="#080E10" stroke="#76FF03" stroke-width="3"/>
+    <circle cx="695" cy="540" r="7.5" fill="#76FF03"/>
+    <circle cx="691" cy="536" r="3.2" fill="#CCFF90"/>
   </g>
 
   <!-- right eye -->
-  <g filter="url(#glow)">
-    <circle cx="745" cy="562" r="28" fill="#111D22" stroke="#8BC34A" stroke-width="4"/>
-    <circle cx="745" cy="562" r="14" fill="#0A1215" stroke="#8BC34A" stroke-width="2.5"/>
-    <circle cx="745" cy="562" r="7" fill="#8BC34A"/>
-    <circle cx="741" cy="558" r="3" fill="#C5E1A5"/>
+  <g filter="url(#eyeGlow)">
+    <circle cx="745" cy="540" r="30" fill="#0E1A1E" stroke="#76FF03" stroke-width="4.5"/>
+    <circle cx="745" cy="540" r="15" fill="#080E10" stroke="#76FF03" stroke-width="3"/>
+    <circle cx="745" cy="540" r="7.5" fill="#76FF03"/>
+    <circle cx="741" cy="536" r="3.2" fill="#CCFF90"/>
   </g>
 
   <!-- radar dots -->
-  <circle cx="590" cy="610" r="5" fill="#EF5350" opacity="0.8"/>
-  <circle cx="615" cy="530" r="4" fill="#EF5350" opacity="0.7"/>
-  <circle cx="860" cy="600" r="5" fill="#EF5350" opacity="0.8"/>
-  <circle cx="870" cy="660" r="4" fill="#EF5350" opacity="0.6"/>
-  <circle cx="635" cy="490" r="3.5" fill="#EF5350" opacity="0.6"/>
-  <circle cx="805" cy="495" r="3.5" fill="#EF5350" opacity="0.65"/>
+  <circle cx="580" cy="605" r="5.5" fill="#FF1744" opacity="0.9"/>
+  <circle cx="605" cy="510" r="5" fill="#FF1744" opacity="0.8"/>
+  <circle cx="865" cy="595" r="5.5" fill="#FF1744" opacity="0.9"/>
+  <circle cx="875" cy="660" r="5" fill="#FF1744" opacity="0.7"/>
+  <circle cx="630" cy="470" r="4" fill="#FF1744" opacity="0.7"/>
+  <circle cx="810" cy="475" r="4" fill="#FF1744" opacity="0.75"/>
 
   <!-- detected objects on road -->
-  <rect x="300" y="810" width="60" height="90" rx="6" fill="none" stroke="#EF5350" stroke-width="2.5" opacity="0.5"/>
-  <text x="370" y="830" font-family="sans-serif" font-size="16" fill="#EF5350" opacity="0.5">ID 3</text>
-  <rect x="1050" y="800" width="65" height="95" rx="6" fill="none" stroke="#EF5350" stroke-width="2.5" opacity="0.4"/>
-  <text x="1125" y="825" font-family="sans-serif" font-size="16" fill="#EF5350" opacity="0.4">ID 7</text>
+  <rect x="300" y="810" width="60" height="90" rx="6" fill="none" stroke="#FF1744" stroke-width="3" opacity="0.5"/>
+  <text x="370" y="832" font-family="sans-serif" font-weight="500" font-size="18" fill="#FF1744" opacity="0.6">ID 3</text>
+  <rect x="1050" y="800" width="65" height="95" rx="6" fill="none" stroke="#FF1744" stroke-width="3" opacity="0.4"/>
+  <text x="1125" y="827" font-family="sans-serif" font-weight="500" font-size="18" fill="#FF1744" opacity="0.5">ID 7</text>
 
-  <!-- text — right side, large and clear -->
-  <text x="1440" y="560" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-weight="800" font-size="96" fill="#F0F4F0" letter-spacing="0.02em">자율주행 연구일지</text>
-  <text x="1440" y="640" font-family="sans-serif" font-weight="400" font-size="36" fill="#78908C" letter-spacing="0.08em">AUTONOMOUS DRIVING LAB NOTES</text>
-  <line x1="1440" y1="675" x2="1700" y2="675" stroke="#8BC34A" stroke-width="3" opacity="0.6"/>
-  <text x="1440" y="720" font-family="sans-serif" font-weight="300" font-size="28" fill="#78908C">BEV Perception · Sensor Fusion · Edge Deployment</text>
+  <!-- text -->
+  <text x="1440" y="560" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-weight="900" font-size="96" fill="#FFFFFF" letter-spacing="0.02em">자율주행 연구일지</text>
+  <text x="1440" y="640" font-family="sans-serif" font-weight="500" font-size="36" fill="#90A4AE" letter-spacing="0.08em">AUTONOMOUS DRIVING LAB NOTES</text>
+  <line x1="1440" y1="675" x2="1700" y2="675" stroke="#76FF03" stroke-width="3" opacity="0.7"/>
+  <text x="1440" y="720" font-family="sans-serif" font-weight="300" font-size="28" fill="#90A4AE">BEV Perception · Sensor Fusion · Edge Deployment</text>
 </svg>
