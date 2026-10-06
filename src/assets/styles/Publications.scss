@@ -8,13 +8,13 @@
   .pub-count {
     font-size: 0.85rem;
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.4);
+    color: #888;
   }
 }
 
 .pub-table-wrap {
   overflow-x: auto;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 8px;
 }
 
@@ -28,15 +28,15 @@
   td {
     text-align: left;
     padding: 0.85rem 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     vertical-align: top;
   }
 
   th {
-    color: rgba(255, 255, 255, 0.5);
+    color: #333;
     font-weight: 500;
     font-size: 0.8rem;
-    background: rgba(255, 255, 255, 0.03);
+    background: #e8eaf6;
   }
 
   tbody tr:last-child td {
@@ -44,7 +44,7 @@
   }
 
   td {
-    color: rgba(255, 255, 255, 0.75);
+    color: #333;
   }
 
   td a {
@@ -59,16 +59,16 @@
 
   td.year {
     font-family: "Lato", monospace;
-    color: rgba(255, 255, 255, 0.4);
+    color: #888;
     white-space: nowrap;
   }
 
   td.first-author {
-    color: #9dc188;
+    color: #4a8a35;
   }
 
   tr:hover td {
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(92, 124, 250, 0.06);
   }
 }
 
@@ -79,8 +79,8 @@
 }
 
 .patent-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 8px;
   padding: 1.3rem 1.4rem;
   transition: border-color 0.2s ease;
@@ -93,48 +93,21 @@
     display: flex;
     gap: 1rem;
     font-size: 0.78rem;
-    color: rgba(255, 255, 255, 0.4);
+    color: #888;
     margin-bottom: 0.6rem;
   }
 
   h3 {
     font-size: 0.95rem;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.8);
+    color: #333;
     margin: 0 0 0.5rem;
     line-height: 1.5;
   }
 
   .patent-number {
     font-size: 0.78rem;
-    color: rgba(255, 255, 255, 0.35);
+    color: #999;
     font-family: "Lato", monospace;
-  }
-}
-
-.light-mode {
-  .pub-section-title .pub-count {
-    color: #888;
-  }
-
-  .pub-table-wrap {
-    border-color: rgba(0, 0, 0, 0.08);
-  }
-
-  .patent-card {
-    background: rgba(0, 0, 0, 0.02);
-    border-color: rgba(0, 0, 0, 0.08);
-
-    .patent-meta {
-      color: #888;
-    }
-
-    h3 {
-      color: #333;
-    }
-
-    .patent-number {
-      color: #999;
-    }
   }
 }

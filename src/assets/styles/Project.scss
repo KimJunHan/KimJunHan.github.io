@@ -20,8 +20,8 @@
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 10px;
   padding: 1.8rem;
   min-height: 220px;
@@ -49,34 +49,34 @@
   h2 {
     font-size: 1.4rem;
     margin: 0.4rem 0 0.5rem;
-    color: white;
+    color: #0d1116;
   }
 
   .project-tag {
     display: inline-block;
     font-size: 0.7rem;
     padding: 0.2em 0.6em;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 3px;
-    color: rgba(255, 255, 255, 0.6);
+    color: #666;
     margin-right: 0.5rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 
     &.first-author {
-      border-color: rgba(111, 157, 92, 0.5);
-      color: #9dc188;
+      color: #4a8a35;
+      border-color: rgba(74, 138, 53, 0.4);
     }
   }
 
   .project-venue {
     font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.45);
+    color: #888;
   }
 
   .project-subtitle {
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.55);
+    color: #666;
     margin: 0;
     flex: 1;
   }
@@ -93,14 +93,14 @@
   li {
     font-size: 0.75rem;
     padding: 0.2em 0.6em;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 3px;
-    color: rgba(255, 255, 255, 0.6);
+    color: #666;
     font-family: "Lato", monospace;
 
     &.highlight {
-      border-color: rgba(111, 157, 92, 0.45);
-      color: #9dc188;
+      color: #4a8a35;
+      border-color: rgba(74, 138, 53, 0.35);
     }
   }
 }
@@ -114,45 +114,6 @@
 .zoom:hover {
   transform: scale(1.02);
   border-color: rgba(92, 124, 250, 0.3);
-}
-
-.light-mode {
-  .project-card {
-    background: rgba(0, 0, 0, 0.02);
-    border-color: rgba(0, 0, 0, 0.08);
-
-    h2 {
-      color: #0d1116;
-    }
-
-    .project-tag {
-      color: #666;
-      border-color: rgba(0, 0, 0, 0.15);
-
-      &.first-author {
-        color: #4a8a35;
-        border-color: rgba(74, 138, 53, 0.4);
-      }
-    }
-
-    .project-venue {
-      color: #888;
-    }
-
-    .project-subtitle {
-      color: #666;
-    }
-  }
-
-  .project-metrics li {
-    color: #666;
-    border-color: rgba(0, 0, 0, 0.1);
-
-    &.highlight {
-      color: #4a8a35;
-      border-color: rgba(74, 138, 53, 0.35);
-    }
-  }
 }
 
 @media screen {

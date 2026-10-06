@@ -3,6 +3,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import ArticleIcon from "@mui/icons-material/Article";
 import EmailIcon from "@mui/icons-material/Email";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import "../assets/styles/Main.scss";
 
 function Main() {
@@ -41,6 +42,13 @@ function Main() {
             <a href="mailto:kimjunhan1605@gmail.com">
               <EmailIcon />
             </a>
+            <a
+              href="https://www.linkedin.com/in/junhan-kim-a82b09207/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <LinkedInIcon />
+            </a>
           </div>
           <h1>Junhan Kim</h1>
           <p>Autonomous Driving Perception Researcher</p>
@@ -70,6 +78,13 @@ function Main() {
             <a href="mailto:kimjunhan1605@gmail.com">
               <EmailIcon />
             </a>
+            <a
+              href="https://www.linkedin.com/in/junhan-kim-a82b09207/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <LinkedInIcon />
+            </a>
           </div>
         </div>
       </div>
@@ -98,14 +113,18 @@ function Main() {
               <div className="journey-marker" />
               <div className="journey-content">
                 <span className="journey-date">2021</span>
-                <h3>Starting Point &mdash; Industry Vision Developer</h3>
+                <h3>Starting Point &mdash; M.S. &amp; Industry</h3>
                 <p>
-                  Joined Anyractive as an AI/Vision developer working on Hyundai
-                  Mobis advance vehicle projects (M.VISION HI, POP, H2GO).
-                  Developed real-time camera and LiDAR algorithms for gaze
-                  tracking, gesture recognition, and pedestrian detection across
-                  a system spanning eight PCs. Building LiDAR-based pedestrian
-                  detection there is what moved me into perception research.
+                  Entered the M.S. program at the Graduate School of Software
+                  Convergence, Kookmin University (Network Application Lab,
+                  advised by Prof. Sanghwan Lee), building foundations in deep
+                  learning and computer vision. Concurrently joined Anyractive
+                  as an AI/Vision developer working on Hyundai Mobis advance
+                  vehicle projects (M.VISION HI, POP, H2GO) &mdash; developing
+                  real-time camera and LiDAR algorithms for gaze tracking,
+                  gesture recognition, and pedestrian detection across a system
+                  spanning eight PCs. Building LiDAR-based pedestrian detection
+                  there is what moved me into perception research.
                 </p>
               </div>
             </div>

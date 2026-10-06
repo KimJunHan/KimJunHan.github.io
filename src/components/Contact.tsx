@@ -4,6 +4,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import ArticleIcon from "@mui/icons-material/Article";
 import SchoolIcon from "@mui/icons-material/School";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import SendIcon from "@mui/icons-material/Send";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -155,6 +156,19 @@ function Contact() {
                 <span className="contact-value">
                   Autonomous Driving Research Log
                 </span>
+              </div>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/junhan-kim-a82b09207/"
+              target="_blank"
+              rel="noreferrer"
+              className="contact-item"
+            >
+              <LinkedInIcon />
+              <div>
+                <span className="contact-label">LinkedIn</span>
+                <span className="contact-value">Junhan Kim</span>
               </div>
             </a>
 

@@ -15,7 +15,7 @@ code {
 
 .main-container {
   position: relative;
-  background-color: #0d1116;
+  background-color: #f8f9fa;
 }
 
 a {
@@ -37,23 +37,26 @@ h4,
 h5,
 label,
 button {
-  color: white;
+  color: #0d1116;
   font-family: "Lato", sans-serif;
 }
 
 .navigation-bar {
-  justify-content: space-between;
-  background-color: #0d1116;
+  justify-content: flex-start;
+  background-color: #f8f9fa;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 
   button {
     font-size: 1.1rem;
     font-family: "Lato", sans-serif;
     text-transform: initial;
     padding: 6px 10px;
+    color: #333;
   }
 
   svg {
     cursor: pointer;
+    color: #333;
   }
 }
 
@@ -118,135 +121,89 @@ button {
     background: linear-gradient(
       90deg,
       transparent 0%,
-      rgba(255, 255, 255, 0.08) 20%,
-      rgba(92, 124, 250, 0.15) 50%,
-      rgba(255, 255, 255, 0.08) 80%,
+      rgba(0, 0, 0, 0.06) 20%,
+      rgba(92, 124, 250, 0.12) 50%,
+      rgba(0, 0, 0, 0.06) 80%,
       transparent 100%
     );
     margin-bottom: 1rem;
   }
 }
 
-.light-mode {
-  background-color: #f8f9fa;
+/* ---------- Light Mode Overrides ---------- */
+.about-section {
+  background: linear-gradient(135deg, #e8eaf6 0%, #f5f5f5 50%, #e3f2fd 100%);
+}
 
-  .navigation-bar {
-    background-color: #f8f9fa;
+.skills-container svg {
+  color: #0d1116;
+}
+
+.chip {
+  background-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.vertical-timeline::before {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.vertical-timeline--animate .vertical-timeline-element-content.bounce-in {
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.vertical-timeline--two-columns
+  .vertical-timeline-element-content
+  .vertical-timeline-element-date {
+  color: gray;
+}
+
+.vertical-timeline-element-content-arrow {
+  border-right: 7px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.flex-chips .chip-title {
+  color: #0d1116;
+}
+
+.pub-table {
+  th {
+    background-color: #e8eaf6;
+    color: #333;
   }
+  td {
+    color: #333;
+  }
+  tr:hover td {
+    background-color: rgba(92, 124, 250, 0.06);
+  }
+}
 
-  p,
-  a,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  label,
-  button {
+.fact-card {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.08);
+  .fact-value {
     color: #0d1116;
   }
-
-  a:hover {
-    color: #5c7cfa;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-      border-color 0.15s ease-in-out;
+  .fact-label {
+    color: #666;
   }
-
-  .navigation-bar svg {
-    color: #0d1116;
+  .fact-sub {
+    color: #999;
   }
+}
 
-  .about-section {
-    background: linear-gradient(135deg, #e8eaf6 0%, #f5f5f5 50%, #e3f2fd 100%);
+.contact-item {
+  border-color: rgba(0, 0, 0, 0.08);
+  &:hover {
+    border-color: #5c7cfa;
   }
-
-  .skills-container svg {
-    color: #0d1116;
-  }
-
-  .chip {
-    background-color: rgba(0, 0, 0, 0.08);
-    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
-      0px 2px 2px 0px rgba(0, 0, 0, 0.14),
-      0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-  }
-
-  .vertical-timeline::before {
-    background-color: rgba(0, 0, 0, 0.08);
-  }
-
-  .vertical-timeline--animate .vertical-timeline-element-content.bounce-in {
-    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
-      0px 2px 2px 0px rgba(0, 0, 0, 0.14),
-      0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-  }
-
-  .vertical-timeline--two-columns
-    .vertical-timeline-element-content
-    .vertical-timeline-element-date {
-    color: gray;
-  }
-
-  .vertical-timeline-element-content-arrow {
-    border-right: 7px solid rgba(0, 0, 0, 0.08) !important;
-  }
-
-  .flex-chips .chip-title {
-    color: #0d1116;
-  }
-
-  .pub-table {
-    th {
-      background-color: #e8eaf6;
-      color: #333;
-    }
-    td {
-      color: #333;
-    }
-    tr:hover td {
-      background-color: rgba(92, 124, 250, 0.06);
-    }
-  }
-
-  .fact-card {
-    background: rgba(0, 0, 0, 0.03);
-    border-color: rgba(0, 0, 0, 0.08);
-    .fact-value {
-      color: #0d1116;
-    }
-    .fact-label {
-      color: #666;
-    }
-    .fact-sub {
-      color: #999;
-    }
-  }
-
-  .contact-item {
-    border-color: rgba(0, 0, 0, 0.08);
-    &:hover {
-      border-color: #5c7cfa;
-    }
-    .contact-label {
-      color: #666;
-    }
-  }
-
-  #expertise,
-  #history,
-  #projects,
-  #publications,
-  #contact {
-    &::before {
-      background: linear-gradient(
-        90deg,
-        transparent 0%,
-        rgba(0, 0, 0, 0.06) 20%,
-        rgba(92, 124, 250, 0.12) 50%,
-        rgba(0, 0, 0, 0.06) 80%,
-        transparent 100%
-      );
-    }
+  .contact-label {
+    color: #666;
   }
 }
 
