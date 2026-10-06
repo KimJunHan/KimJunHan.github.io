@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Junhan Kim — Autonomous Driving Perception</title>
-<meta name="description" content="Junhan Kim. Autonomous driving perception research: BEV representation learning, camera-radar/LiDAR sensor fusion, 3D detection and tracking, real-time edge deployment.">
+<title>キム・ジュンハン — 自動運転知覚研究</title>
+<meta name="description" content="キム・ジュンハン。自動運転知覚研究：BEV表現学習、カメラ・レーダー/LiDARセンサーフュージョン、3D検出・追跡、リアルタイムエッジ展開。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" href="logo.svg" type="image/svg+xml">
-<meta property="og:image" content="logo-profile.svg">
-<meta property="og:title" content="Junhan Kim — Autonomous Driving Perception">
-<meta property="og:description" content="BEV representation learning, camera-radar/LiDAR fusion, 3D detection, real-time edge deployment">
+<link rel="icon" href="../logo.svg" type="image/svg+xml">
+<meta property="og:image" content="../logo-profile.svg">
+<meta property="og:title" content="キム・ジュンハン — 自動運転知覚研究">
+<meta property="og:description" content="BEV表現学習、カメラ・レーダー/LiDARフュージョン、3D検出、リアルタイムエッジ展開">
 <style>
 :root{
   /* palette lifted from nuScenes BEV map rendering */
@@ -154,11 +154,11 @@ footer{padding:2.6rem 0 3.4rem;color:var(--mute);font-size:.8rem;border-top:1px 
 </head>
 <body>
 
-<nav class="lang" aria-label="Language">
-  <a href="./" class="active" title="English">🇺🇸</a>
-  <a href="ko/" title="한국어">🇰🇷</a>
-  <a href="zh/" title="中文">🇨🇳</a>
-  <a href="ja/" title="日本語">🇯🇵</a>
+<nav class="lang" aria-label="言語切替">
+  <a href="../" title="English">🇺🇸</a>
+  <a href="../ko/" title="한국어">🇰🇷</a>
+  <a href="../zh/" title="中文">🇨🇳</a>
+  <a href="./" class="active" title="日本語">🇯🇵</a>
 </nav>
 
 <header class="hero">
@@ -166,25 +166,25 @@ footer{padding:2.6rem 0 3.4rem;color:var(--mute);font-size:.8rem;border-top:1px 
 
   <div class="hero-inner">
     <h1 class="hero-name">JUNHAN&nbsp;KIM</h1>
-    <p class="hero-sub">Autonomous driving perception researcher</p>
-    <p class="hero-role">BEV representation learning · Camera–radar/LiDAR fusion · 3D detection and tracking · Real-time edge deployment</p>
-    <nav class="chips" aria-label="Primary links">
+    <p class="hero-sub">自動運転知覚研究者</p>
+    <p class="hero-role">BEV表現学習 · カメラ・レーダー/LiDARフュージョン · 3D検出・追跡 · リアルタイムエッジ展開</p>
+    <nav class="chips" aria-label="主要リンク">
       <a class="chip" href="https://github.com/KimJunHan" target="_blank" rel="noopener">Github</a>
-      <a class="chip" href="https://blog.naver.com/kim_jun_han" target="_blank" rel="noopener">Blog</a>
-      <a class="chip" href="https://www.youtube.com/@andthensome9277" target="_blank" rel="noopener">자율주행 연구일지</a>
-      <a class="chip" href="#research">Research</a>
-      <a class="chip" href="#contact">Contact</a>
+      <a class="chip" href="https://blog.naver.com/kim_jun_han" target="_blank" rel="noopener">ブログ</a>
+      <a class="chip" href="https://www.youtube.com/@andthensome9277" target="_blank" rel="noopener">自動運転研究日誌</a>
+      <a class="chip" href="#research">研究</a>
+      <a class="chip" href="#contact">連絡先</a>
     </nav>
   </div>
 
   <div class="legend" aria-hidden="true">
-    <div><b style="background:#6F9D5C"></b>Drivable area</div>
-    <div><b style="background:#7E88C0"></b>Walkway</div>
-    <div><b style="background:#CF5F6B"></b>Detected object with track ID</div>
-    <div style="margin-top:.5rem;opacity:.75">The background renders a live BEV perception output.</div>
+    <div><b style="background:#6F9D5C"></b>走行可能領域</div>
+    <div><b style="background:#7E88C0"></b>歩道</div>
+    <div><b style="background:#CF5F6B"></b>検出物体とトラックID</div>
+    <div style="margin-top:.5rem;opacity:.75">背景はBEV知覚出力をリアルタイムで描画しています。</div>
   </div>
 
-  <a class="scrollcue" href="#about" aria-label="Scroll down">
+  <a class="scrollcue" href="#about" aria-label="下にスクロール">
     <span>SCROLL</span>
     <svg width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
       <path d="M1 1l7 7 7-7" stroke="currentColor" stroke-width="1.4"/>
@@ -197,26 +197,25 @@ footer{padding:2.6rem 0 3.4rem;color:var(--mute);font-size:.8rem;border-top:1px 
 <section id="about">
   <div class="wrap">
     <div class="sec-head">
-      <h2>About</h2>
-      <p>From a lab possibility to a module that runs on the road</p>
+      <h2>概要</h2>
+      <p>研究室の可能性から路上で動くモジュールへ</p>
     </div>
     <p class="lede">
-      I research autonomous driving perception at the Vehicle Intelligence Laboratory (VILAB),
-      Graduate School of Automobile and Mobility, Kookmin University. I completed the Ph.D.
-      coursework in August 2026 and expect to receive the degree in August 2027.
+      国民大学大学院 自動車モビリティ学科 車両知能研究室（VILAB）にて自動運転知覚を研究しています。
+      2026年8月に博士課程の単位取得を完了し、2027年8月に学位取得を予定しています。
     </p>
     <p class="lede">
-      I treat two questions as one problem: how to fuse camera, radar and LiDAR in BEV space,
-      and how to make that model run on a vehicle's edge board within a fixed time budget.
-      Rather than reporting a single aggregate score, I break performance down into the regimes
-      where a model actually fails — night, rain, long range — and work out why.
+      私が取り組む問いは二つで一つです。カメラ・レーダー・LiDARをBEV空間でどう融合するか、
+      そしてそのモデルを車両のエッジボード上で所定の時間内にどう動かすか。
+      単一の集約スコアを報告するのではなく、モデルが実際に失敗する領域
+      ——夜間・雨天・遠距離——に性能を分解し、その原因を究明しています。
     </p>
 
     <dl class="facts">
-      <div class="fact"><dt>Relevant experience</dt><dd>5 yrs 4 mos<span>since 2021.05</span></dd></div>
-      <div class="fact"><dt>First-author papers</dt><dd>5<span>incl. 1 SCIE</span></dd></div>
-      <div class="fact"><dt>Patents filed</dt><dd>3<span>all under examination</span></dd></div>
-      <div class="fact"><dt>Award</dt><dd>AVEC 2026<span>Best Paper Finalist</span></dd></div>
+      <div class="fact"><dt>関連経験</dt><dd>5年4ヶ月<span>2021.05より</span></dd></div>
+      <div class="fact"><dt>筆頭著者論文</dt><dd>5<span>SCIE 1件含む</span></dd></div>
+      <div class="fact"><dt>出願特許</dt><dd>3<span>全件審査中</span></dd></div>
+      <div class="fact"><dt>受賞</dt><dd>AVEC 2026<span>Best Paper Finalist</span></dd></div>
     </dl>
   </div>
 </section>
@@ -224,8 +223,8 @@ footer{padding:2.6rem 0 3.4rem;color:var(--mute);font-size:.8rem;border-top:1px 
 <section id="research">
   <div class="wrap">
     <div class="sec-head">
-      <h2>Research</h2>
-      <p>Four representative projects</p>
+      <h2>研究</h2>
+      <p>代表的な4つのプロジェクト</p>
     </div>
 
     <div class="work">
@@ -233,16 +232,16 @@ footer{padding:2.6rem 0 3.4rem;color:var(--mute);font-size:.8rem;border-top:1px 
       <article class="item">
         <div class="item-meta">
           <div>2025 — 2026</div>
-          <div class="tag">First author</div>
+          <div class="tag">筆頭著者</div>
           <div>AVEC 2026</div>
         </div>
         <div>
-          <h3><a href="projects/gaussiandt/" style="text-decoration:none">GaussianDT <em>— camera–radar Gaussian BEV detection and tracking</em></a></h3>
+          <h3><a href="../projects/gaussiandt/" style="text-decoration:none">GaussianDT <em>— カメラ・レーダー Gaussian BEV検出・追跡</em></a></h3>
           <p>
-            To address both grid discretization error and the detection–tracking split, I defined an
-            augmented 3D Gaussian carrying a motion vector and an identity embedding. Radar Doppler
-            is used as a velocity prior rather than a plain input channel, anchoring velocity
-            estimation to a physical measurement.
+            グリッド離散化誤差と検出・追跡の分離という二つの課題に対処するため、
+            運動ベクトルとID埋め込みを持つ拡張3D Gaussianを定義しました。
+            レーダーのドップラー情報を単なる入力チャンネルではなく速度事前分布として活用し、
+            速度推定を物理計測値に固定しています。
           </p>
           <ul class="metrics">
             <li>nuScenes mAP 33.6</li><li>AMOTA 0.372</li>
@@ -255,21 +254,21 @@ footer{padding:2.6rem 0 3.4rem;color:var(--mute);font-size:.8rem;border-top:1px 
       <article class="item">
         <div class="item-meta">
           <div>2025 — 2026</div>
-          <div class="tag">First author</div>
+          <div class="tag">筆頭著者</div>
           <div>IEEE Access</div>
         </div>
         <div>
-          <h3><a href="projects/segmam/" style="text-decoration:none">SegMam <em>— Pseudo-LiDAR with Cross-Mamba attention for BEV segmentation</em></a></h3>
+          <h3><a href="../projects/segmam/" style="text-decoration:none">SegMam <em>— Pseudo-LiDARとCross-Mambaアテンションによる BEVセグメンテーション</em></a></h3>
           <p>
-            I reformulated Transformer cross-attention as Mamba's selective scan, yielding a
-            Query–Value two-stream block with no explicit Key projection. Pseudo-LiDAR point clouds
-            derived from monocular depth serve as the value stream. No real LiDAR or radar is used
-            anywhere in the pipeline.
+            Transformerのクロスアテンションを Mambaの選択的スキャンに再定式化し、
+            明示的なKey射影を省略したQuery-Value二ストリームブロックを構築しました。
+            単眼深度推定から生成したPseudo-LiDAR点群をバリューストリームとして使用します。
+            パイプライン全体で実LiDARやレーダーは一切使用していません。
           </p>
           <ul class="metrics">
             <li>Drivable Area IoU 81.6</li><li>Vehicle IoU 50.0</li>
             <li class="hi">Night Map IoU +13.6</li><li class="hi">Rain +6.0</li>
-            <li>Code and checkpoints released</li>
+            <li>コードとチェックポイント公開済</li>
           </ul>
         </div>
       </article>
@@ -277,41 +276,41 @@ footer{padding:2.6rem 0 3.4rem;color:var(--mute);font-size:.8rem;border-top:1px 
       <article class="item">
         <div class="item-meta">
           <div>2025 — 2026</div>
-          <div>Co-author</div>
+          <div>共著者</div>
           <div>KSAE</div>
         </div>
         <div>
-          <h3><a href="projects/edge-bev/" style="text-decoration:none">Real-time BEV on edge devices <em>— ONNX, TensorRT, Jetson</em></a></h3>
+          <h3><a href="../projects/edge-bev/" style="text-decoration:none">エッジデバイスでのリアルタイムBEV <em>— ONNX, TensorRT, Jetson</em></a></h3>
           <p>
-            Instead of stopping at desktop numbers, I exported the model to ONNX, quantized it to
-            FP16, built a TensorRT engine and deployed it on Jetson boards. Measurements confirmed
-            that the same model differs by a factor of two in latency across board generations.
+            デスクトップ上の数値に留まらず、モデルをONNXにエクスポートし、FP16に量子化し、
+            TensorRTエンジンを構築してJetsonボードにデプロイしました。
+            同一モデルでもボード世代間でレイテンシが2倍異なることを計測で確認しています。
           </p>
           <ul class="metrics">
-            <li>IoU held at about 72%</li>
+            <li>IoU 約72%を維持</li>
             <li class="hi">AGX Orin 44 ms</li><li class="hi">AGX Thor 22 ms</li>
-            <li>vs. 352 ms baseline</li>
+            <li>ベースライン 352 ms比</li>
           </ul>
         </div>
       </article>
 
       <article class="item">
         <div class="item-meta">
-          <div>2024 — present</div>
-          <div>National project</div>
+          <div>2024 — 現在</div>
+          <div>国家プロジェクト</div>
           <div>KEIT</div>
         </div>
         <div>
-          <h3><a href="projects/vehicle-pipeline/" style="text-decoration:none">Vehicle data pipeline and ROS perception module</a></h3>
+          <h3><a href="../projects/vehicle-pipeline/" style="text-decoration:none">車両データパイプラインとROS知覚モジュール</a></h3>
           <p>
-            I helped convert a Sonata into a data collection platform (6 cameras, 1 LiDAR, GPS, IMU)
-            and ran polygon ground-truth labeling for drivable area. Model output is converted into
-            an ego-centric occupancy grid published at 10 Hz to the planning module, with the
-            interface agreed across four institutions and validated in a certified evaluation.
+            ソナタをデータ収集プラットフォーム（カメラ6台、LiDAR 1台、GPS、IMU）に改造する作業を支援し、
+            走行可能領域のポリゴンGTラベリングを実施しました。モデル出力は自車中心のオキュパンシーグリッドに変換し、
+            10 Hzで計画モジュールに配信しています。インターフェースは4機関間で合意し、
+            公認評価で検証されました。
           </p>
           <ul class="metrics">
             <li>0.3 m · 200×120 grid</li><li>nav_msgs/OccupancyGrid</li>
-            <li>119 scenes labeled</li><li>KIAPI certification</li>
+            <li>119シーンをラベル付け</li><li>KIAPI認証</li>
           </ul>
         </div>
       </article>
@@ -323,24 +322,24 @@ footer{padding:2.6rem 0 3.4rem;color:var(--mute);font-size:.8rem;border-top:1px 
 <section id="publications">
   <div class="wrap">
     <div class="sec-head">
-      <h2>Publications</h2>
-      <p>5 as first author, 4 as co-author</p>
+      <h2>論文</h2>
+      <p>筆頭著者5件、共著者4件</p>
     </div>
     <div class="tablewrap">
       <table>
         <thead>
-          <tr><th>Title</th><th>Venue</th><th>Role</th><th>Year</th></tr>
+          <tr><th>タイトル</th><th>掲載先</th><th>役割</th><th>年</th></tr>
         </thead>
         <tbody>
-          <tr><td><a href="projects/segmam/">SegMam: Multi-Scale Deformable Cross-Mamba Attention with Pseudo-LiDAR from Multi-Camera Depth for BEV Segmentation</a></td><td>IEEE Access (SCIE)</td><td class="first">First author</td><td class="yr">2026</td></tr>
-          <tr><td><a href="projects/gaussiandt/">GaussianDT: Gaussian Splatting Optimization for Object Detection and Tracking with Camera–Radar Fusion</a></td><td>AVEC 2026, Tsukuba, Japan</td><td class="first">First author</td><td class="yr">2026</td></tr>
-          <tr><td>Vehicle Trajectory Correction in ORB Visual SLAM Using Extended Kalman Filter</td><td>Transactions of KSAE 34(3)</td><td class="first">First author</td><td class="yr">2026</td></tr>
-          <tr><td><a href="projects/gaussiandt/">Map-view Prior Based Radar Multi-Object Tracking</a></td><td>Transactions of KSAE (under review)</td><td class="first">First author</td><td class="yr">2026</td></tr>
-          <tr><td><a href="projects/segmam/">3D Multi-Camera Depth BEV Semantic Segmentation Using Multi-Scale Deformable Cross-Attention Mamba</a></td><td>KSAE Fall Conference</td><td class="first">First author</td><td class="yr">2025</td></tr>
-          <tr><td><a href="projects/segmam/">Analysis and Comparison of BEV-Based Deep Learning Semantic Segmentation for Urban Driving Area Perception</a></td><td>KSAE Conference</td><td class="first">First author</td><td class="yr">2025</td></tr>
-          <tr><td><a href="projects/edge-bev/">Development of a Lightweight BEV Drivable Area Model for Real-Time Inference on Edge Devices</a></td><td>KSAE Spring Conference</td><td>Co-author</td><td class="yr">2026</td></tr>
-          <tr><td><a href="projects/segmam/">BEV Semantic Segmentation Using Deep Learning-Based Camera–Pseudo LiDAR Sensor Fusion</a></td><td>KSAE Spring Conference</td><td>Co-author</td><td class="yr">2025</td></tr>
-          <tr><td><a href="projects/vehicle-pipeline/">Target-Based Automated Camera–LiDAR Calibration for Low-Channel LiDAR Sensors</a></td><td>KSAE Fall Conference</td><td>Co-author</td><td class="yr">2025</td></tr>
+          <tr><td><a href="../projects/segmam/">SegMam: Multi-Scale Deformable Cross-Mamba Attention with Pseudo-LiDAR from Multi-Camera Depth for BEV Segmentation</a></td><td>IEEE Access (SCIE)</td><td class="first">筆頭著者</td><td class="yr">2026</td></tr>
+          <tr><td><a href="../projects/gaussiandt/">GaussianDT: Gaussian Splatting Optimization for Object Detection and Tracking with Camera–Radar Fusion</a></td><td>AVEC 2026, Tsukuba, Japan</td><td class="first">筆頭著者</td><td class="yr">2026</td></tr>
+          <tr><td>Vehicle Trajectory Correction in ORB Visual SLAM Using Extended Kalman Filter</td><td>Transactions of KSAE 34(3)</td><td class="first">筆頭著者</td><td class="yr">2026</td></tr>
+          <tr><td><a href="../projects/gaussiandt/">Map-view Prior Based Radar Multi-Object Tracking</a></td><td>Transactions of KSAE (under review)</td><td class="first">筆頭著者</td><td class="yr">2026</td></tr>
+          <tr><td><a href="../projects/segmam/">3D Multi-Camera Depth BEV Semantic Segmentation Using Multi-Scale Deformable Cross-Attention Mamba</a></td><td>KSAE Fall Conference</td><td class="first">筆頭著者</td><td class="yr">2025</td></tr>
+          <tr><td><a href="../projects/segmam/">Analysis and Comparison of BEV-Based Deep Learning Semantic Segmentation for Urban Driving Area Perception</a></td><td>KSAE Conference</td><td class="first">筆頭著者</td><td class="yr">2025</td></tr>
+          <tr><td><a href="../projects/edge-bev/">Development of a Lightweight BEV Drivable Area Model for Real-Time Inference on Edge Devices</a></td><td>KSAE Spring Conference</td><td>共著者</td><td class="yr">2026</td></tr>
+          <tr><td><a href="../projects/segmam/">BEV Semantic Segmentation Using Deep Learning-Based Camera–Pseudo LiDAR Sensor Fusion</a></td><td>KSAE Spring Conference</td><td>共著者</td><td class="yr">2025</td></tr>
+          <tr><td><a href="../projects/vehicle-pipeline/">Target-Based Automated Camera–LiDAR Calibration for Low-Channel LiDAR Sensors</a></td><td>KSAE Fall Conference</td><td>共著者</td><td class="yr">2025</td></tr>
         </tbody>
       </table>
     </div>
@@ -350,31 +349,31 @@ footer{padding:2.6rem 0 3.4rem;color:var(--mute);font-size:.8rem;border-top:1px 
 <section id="patents">
   <div class="wrap">
     <div class="sec-head">
-      <h2>Patents</h2>
-      <p>3 filed in Korea, all with examination requested</p>
+      <h2>特許</h2>
+      <p>韓国出願3件、全件審査請求済</p>
     </div>
     <div class="work">
       <article class="item">
-        <div class="item-meta"><div>2026.06.15</div><div>2nd inventor</div></div>
+        <div class="item-meta"><div>2026.06.15</div><div>第2発明者</div></div>
         <div>
-          <h3>Virtual simulator for evaluating perception modules via Gaussian Splatting reconstruction</h3>
-          <p>Reconstructs a 3D Gaussian Splatting scene from real on-road driving data to extend the scenario set for perception evaluation. Includes hierarchical zone reconstruction with spherical-harmonic and atmospheric correction.</p>
+          <h3>Gaussian Splatting再構成による知覚モジュール評価用バーチャルシミュレータ</h3>
+          <p>実走行データから3D Gaussian Splattingシーンを再構成し、知覚評価のシナリオセットを拡張します。球面調和関数および大気補正を伴う階層的ゾーン再構成を含みます。</p>
           <ul class="metrics"><li>10-2026-0108887</li></ul>
         </div>
       </article>
       <article class="item">
-        <div class="item-meta"><div>2026.06.12</div><div>2nd inventor</div></div>
+        <div class="item-meta"><div>2026.06.12</div><div>第2発明者</div></div>
         <div>
-          <h3>Vision-language model based pedestrian risk assessment and vehicle communication</h3>
-          <p>Separates high-latency VLM inference from low-latency safety decisions into fast and slow tracks to preserve real-time behaviour, then broadcasts the assessment to nearby vehicles over V2X.</p>
+          <h3>視覚言語モデルに基づく歩行者リスク評価と車両間通信</h3>
+          <p>高遅延のVLM推論と低遅延の安全判断をファスト・スロートラックに分離し、リアルタイム性を確保したうえで、評価結果をV2Xを通じて周辺車両に配信します。</p>
           <ul class="metrics"><li>10-2026-0107208</li></ul>
         </div>
       </article>
       <article class="item">
-        <div class="item-meta"><div>2025.11.28</div><div>4th inventor</div></div>
+        <div class="item-meta"><div>2025.11.28</div><div>第4発明者</div></div>
         <div>
-          <h3>Pedestrian risk assessment method and intelligent pedestrian safety management device</h3>
-          <p>Assesses risk for pedestrians and micromobility users and manages their safety accordingly.</p>
+          <h3>歩行者リスク評価方法およびインテリジェント歩行者安全管理装置</h3>
+          <p>歩行者およびマイクロモビリティ利用者のリスクを評価し、それに応じた安全管理を行います。</p>
           <ul class="metrics"><li>10-2025-0185188</li></ul>
         </div>
       </article>
@@ -385,29 +384,29 @@ footer{padding:2.6rem 0 3.4rem;color:var(--mute);font-size:.8rem;border-top:1px 
 <section id="experience">
   <div class="wrap">
     <div class="sec-head">
-      <h2>Experience</h2>
-      <p>M.S. + Ph.D. in research, 2 yrs 10 mos in industry</p>
+      <h2>経歴</h2>
+      <p>修士・博士の研究経験、産業界2年10ヶ月</p>
     </div>
     <div class="work">
       <article class="item">
-        <div class="item-meta"><div>2024.03 — present</div></div>
+        <div class="item-meta"><div>2024.03 — 現在</div></div>
         <div>
-          <h3>Vehicle Intelligence Laboratory, Kookmin University <em>— Ph.D. candidate</em></h3>
-          <p>Perception research and execution of a national R&amp;D project (RS-2024-00445826). Responsible for model design, training and evaluation, ROS integration on the test vehicle, and technical coordination across partner institutions.</p>
+          <h3>車両知能研究室、国民大学 <em>— 博士課程</em></h3>
+          <p>知覚研究および国家R&amp;Dプロジェクト（RS-2024-00445826）の遂行。モデル設計・訓練・評価、試験車両でのROS統合、パートナー機関間の技術調整を担当しています。</p>
         </div>
       </article>
       <article class="item">
         <div class="item-meta"><div>2021.03 — 2023.02</div></div>
         <div>
-          <h3>Graduate School of Software Convergence, Kookmin University <em>— M.S.</em></h3>
-          <p>M.S. in Engineering, Network Application Laboratory, advised by Prof. Sanghwan Lee. Foundations in deep learning, computer vision and data analysis that led into perception research.</p>
+          <h3>ソフトウェア融合大学院、国民大学 <em>— 修士課程</em></h3>
+          <p>工学修士。ネットワーク応用研究室、イ・サンファン教授指導。深層学習、コンピュータビジョン、データ分析の基礎を修得し、知覚研究への道を開きました。</p>
         </div>
       </article>
       <article class="item">
         <div class="item-meta"><div>2021.05 — 2024.02</div></div>
         <div>
-          <h3>Anyractive <em>— AI / Vision Developer</em></h3>
-          <p>Led vision work on Hyundai Mobis advance vehicle projects (M.VISION HI, POP, H2GO): real-time camera and LiDAR algorithms for gaze tracking, gesture recognition, pedestrian detection and stereo object detection, plus a real-time communication system spanning eight PCs. Building LiDAR-based pedestrian detection there is what moved me into perception research.</p>
+          <h3>Anyractive <em>— AI / ビジョン開発者</em></h3>
+          <p>現代モビス先進車両プロジェクト（M.VISION HI、POP、H2GO）でビジョン開発を主導。視線追跡、ジェスチャー認識、歩行者検出、ステレオ物体検出のためのリアルタイムカメラ・LiDARアルゴリズムおよびPC 8台をまたぐリアルタイム通信システムを構築しました。LiDARベースの歩行者検出の経験が知覚研究に進むきっかけとなりました。</p>
         </div>
       </article>
     </div>
@@ -417,15 +416,15 @@ footer{padding:2.6rem 0 3.4rem;color:var(--mute);font-size:.8rem;border-top:1px 
 <section id="contact">
   <div class="wrap">
     <div class="sec-head">
-      <h2>Contact</h2>
-      <p>Open to research collaboration and hiring conversations</p>
+      <h2>連絡先</h2>
+      <p>共同研究や採用に関するご連絡をお待ちしています</p>
     </div>
     <dl class="contact-grid">
-      <div><dt>Email</dt><dd><a href="mailto:kimjunhan@kookmin.ac.kr">kimjunhan@kookmin.ac.kr</a></dd></div>
+      <div><dt>メール</dt><dd><a href="mailto:kimjunhan@kookmin.ac.kr">kimjunhan@kookmin.ac.kr</a></dd></div>
       <div><dt>Github</dt><dd><a href="https://github.com/KimJunHan" target="_blank" rel="noopener">github.com/KimJunHan</a></dd></div>
-      <div><dt>Blog</dt><dd><a href="https://blog.naver.com/kim_jun_han" target="_blank" rel="noopener">blog.naver.com/kim_jun_han</a></dd></div>
-      <div><dt>YouTube</dt><dd><a href="https://www.youtube.com/@andthensome9277" target="_blank" rel="noopener">자율주행 연구일지</a></dd></div>
-      <div><dt>Affiliation</dt><dd class="quiet">Graduate School of Automobile and Mobility<br>Kookmin University, Seoul</dd></div>
+      <div><dt>ブログ</dt><dd><a href="https://blog.naver.com/kim_jun_han" target="_blank" rel="noopener">blog.naver.com/kim_jun_han</a></dd></div>
+      <div><dt>YouTube</dt><dd><a href="https://www.youtube.com/@andthensome9277" target="_blank" rel="noopener">自動運転研究日誌</a></dd></div>
+      <div><dt>所属</dt><dd class="quiet">大学院 自動車モビリティ学科<br>国民大学、ソウル</dd></div>
     </dl>
   </div>
 </section>
@@ -433,7 +432,7 @@ footer{padding:2.6rem 0 3.4rem;color:var(--mute);font-size:.8rem;border-top:1px 
 </main>
 
 <footer>
-  <div class="wrap">© 2026 Junhan Kim · The background is a canvas rendering of a BEV drivable-area perception output.</div>
+  <div class="wrap">© 2026 Junhan Kim · 背景はBEV走行可能領域知覚出力のキャンバス描画です。</div>
 </footer>
 
 <script>
