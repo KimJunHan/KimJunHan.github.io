@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E2A2E"/>
+      <stop offset="100%" stop-color="#0A0E10"/>
+    </linearGradient>
+    <linearGradient id="sensorGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6F9D5C" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#6F9D5C" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- background circle -->
+  <circle cx="200" cy="200" r="195" fill="#0A0E10"/>
+  <circle cx="200" cy="200" r="195" fill="none" stroke="#222D31" stroke-width="1.5"/>
+
+  <!-- road surface -->
+  <rect x="60" y="240" width="280" height="60" rx="4" fill="#141C1F"/>
+  <line x1="100" y1="270" x2="140" y2="270" stroke="#333" stroke-width="2" stroke-dasharray="8 6"/>
+  <line x1="160" y1="270" x2="200" y2="270" stroke="#333" stroke-width="2" stroke-dasharray="8 6"/>
+  <line x1="220" y1="270" x2="260" y2="270" stroke="#333" stroke-width="2" stroke-dasharray="8 6"/>
+  <line x1="280" y1="270" x2="300" y2="270" stroke="#333" stroke-width="2" stroke-dasharray="8 6"/>
+
+  <!-- sensor detection range (fan shape) -->
+  <path d="M200,195 L120,130 Q200,100 280,130 Z" fill="url(#sensorGlow)" opacity="0.6"/>
+  <path d="M200,195 L120,130 Q200,100 280,130" fill="none" stroke="#6F9D5C" stroke-width="1" opacity="0.5"/>
+
+  <!-- car body (top-down view) -->
+  <rect x="155" y="180" width="90" height="65" rx="16" fill="url(#bodyGrad)" stroke="#3A4A50" stroke-width="1.5"/>
+  <!-- windshield -->
+  <rect x="165" y="186" width="70" height="18" rx="6" fill="#1A2326" stroke="#2A3A40" stroke-width="0.8"/>
+  <!-- rear window -->
+  <rect x="170" y="230" width="60" height="10" rx="4" fill="#1A2326" stroke="#2A3A40" stroke-width="0.8"/>
+
+  <!-- left eye (camera sensor) -->
+  <circle cx="178" cy="170" r="14" fill="#111719" stroke="#6F9D5C" stroke-width="2"/>
+  <circle cx="178" cy="170" r="7" fill="#0A0E10" stroke="#6F9D5C" stroke-width="1.2"/>
+  <circle cx="178" cy="170" r="3.5" fill="#6F9D5C"/>
+  <!-- eye highlight -->
+  <circle cx="176" cy="168" r="1.5" fill="#A0D490"/>
+
+  <!-- right eye (camera sensor) -->
+  <circle cx="222" cy="170" r="14" fill="#111719" stroke="#6F9D5C" stroke-width="2"/>
+  <circle cx="222" cy="170" r="7" fill="#0A0E10" stroke="#6F9D5C" stroke-width="1.2"/>
+  <circle cx="222" cy="170" r="3.5" fill="#6F9D5C"/>
+  <!-- eye highlight -->
+  <circle cx="220" cy="168" r="1.5" fill="#A0D490"/>
+
+  <!-- radar dots around car -->
+  <circle cx="130" cy="200" r="2" fill="#CF5F6B" opacity="0.6"/>
+  <circle cx="145" cy="165" r="1.5" fill="#CF5F6B" opacity="0.5"/>
+  <circle cx="260" cy="190" r="2" fill="#CF5F6B" opacity="0.6"/>
+  <circle cx="270" cy="215" r="1.5" fill="#CF5F6B" opacity="0.4"/>
+  <circle cx="155" cy="145" r="1.5" fill="#CF5F6B" opacity="0.45"/>
+  <circle cx="245" cy="150" r="1.5" fill="#CF5F6B" opacity="0.5"/>
+
+  <!-- text: 자율주행 연구일지 -->
+  <text x="200" y="325" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="26" fill="#EDF1F1" letter-spacing="0.03em">자율주행 연구일지</text>
+  <text x="200" y="352" text-anchor="middle" font-family="'IBM Plex Sans', sans-serif" font-weight="300" font-size="13" fill="#78878C" letter-spacing="0.06em">AUTONOMOUS DRIVING LAB NOTES</text>
+</svg>
