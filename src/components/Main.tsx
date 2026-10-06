@@ -156,9 +156,9 @@ function Main() {
 
           <div className="facts-grid">
             <div className="fact-card">
-              <span className="fact-value">5 yrs 4 mos</span>
+              <span className="fact-value">5 yrs 7 mos</span>
               <span className="fact-label">Relevant Experience</span>
-              <span className="fact-sub">since 2021.05</span>
+              <span className="fact-sub">M.S. + Industry + Ph.D. since 2021.03</span>
             </div>
             <div className="fact-card">
               <span className="fact-value">5</span>
