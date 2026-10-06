@@ -1,5 +1,5 @@
 import React from "react";
-import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import "../assets/styles/Publications.scss";
 
 const publications = [
@@ -8,63 +8,63 @@ const publications = [
     venue: "IEEE Access (SCIE)",
     role: "First author",
     year: "2026",
-    pdf: "papers/segmam-ieee-access-2026.pdf",
+    url: "",
   },
   {
     title: "GaussianDT: Gaussian Splatting Optimization for Object Detection and Tracking with Camera-Radar Fusion",
     venue: "AVEC 2026, Tsukuba, Japan",
     role: "First author",
     year: "2026",
-    pdf: "papers/gaussiandt-avec-2026.pdf",
+    url: "",
   },
   {
     title: "Vehicle Trajectory Correction in ORB Visual SLAM Using Extended Kalman Filter",
     venue: "Transactions of KSAE 34(3)",
     role: "First author",
     year: "2026",
-    pdf: "papers/vslam-ekf-ksae-2026.pdf",
+    url: "http://journal.ksae.org/_common/do.php?a=current&b=21&bidx=4364&aidx=48561",
   },
   {
     title: "Map-view Prior Based Radar Multi-Object Tracking",
     venue: "Transactions of KSAE (under review)",
     role: "First author",
     year: "2026",
-    pdf: "papers/radar-mot-ksae-2026.pdf",
+    url: "",
   },
   {
     title: "3D Multi-Camera Depth BEV Semantic Segmentation Using Multi-Scale Deformable Cross-Attention Mamba",
     venue: "KSAE Fall Conference",
     role: "First author",
     year: "2025",
-    pdf: "papers/segmam-ksae-fall-2025.pdf",
+    url: "",
   },
   {
     title: "Analysis and Comparison of BEV-Based Deep Learning Semantic Segmentation for Urban Driving Area Perception",
     venue: "KSAE Conference",
     role: "First author",
     year: "2025",
-    pdf: "papers/bev-comparison-ksae-2025.pdf",
+    url: "",
   },
   {
     title: "Development of a Lightweight BEV Drivable Area Model for Real-Time Inference on Edge Devices",
     venue: "KSAE Spring Conference",
     role: "Co-author",
     year: "2026",
-    pdf: "papers/edge-bev-ksae-spring-2026.pdf",
+    url: "",
   },
   {
     title: "BEV Semantic Segmentation Using Deep Learning-Based Camera-Pseudo LiDAR Sensor Fusion",
     venue: "KSAE Spring Conference",
     role: "Co-author",
     year: "2025",
-    pdf: "papers/pseudo-lidar-ksae-spring-2025.pdf",
+    url: "",
   },
   {
     title: "Target-Based Automated Camera-LiDAR Calibration for Low-Channel LiDAR Sensors",
     venue: "KSAE Fall Conference",
     role: "Co-author",
     year: "2025",
-    pdf: "papers/calibration-ksae-fall-2025.pdf",
+    url: "",
   },
 ];
 
@@ -106,30 +106,25 @@ function Publications() {
                 <th>Venue</th>
                 <th>Role</th>
                 <th>Year</th>
-                <th>PDF</th>
               </tr>
             </thead>
             <tbody>
               {publications.map((pub, index) => (
                 <tr key={index}>
-                  <td>{pub.title}</td>
+                  <td>
+                    {pub.url ? (
+                      <a href={pub.url} target="_blank" rel="noreferrer">
+                        {pub.title} <OpenInNewIcon className="link-icon" />
+                      </a>
+                    ) : (
+                      pub.title
+                    )}
+                  </td>
                   <td>{pub.venue}</td>
                   <td className={pub.role === "First author" ? "first-author" : ""}>
                     {pub.role}
                   </td>
                   <td className="year">{pub.year}</td>
-                  <td className="pdf-cell">
-                    {pub.pdf && (
-                      <a
-                        href={process.env.PUBLIC_URL + "/" + pub.pdf}
-                        target="_blank"
-                        rel="noreferrer"
-                        title="Download PDF"
-                      >
-                        <PictureAsPdfIcon />
-                      </a>
-                    )}
-                  </td>
                 </tr>
               ))}
             </tbody>
