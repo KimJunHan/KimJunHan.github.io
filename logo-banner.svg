@@ -1,76 +1,83 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2560 1440" width="2560" height="1440">
   <defs>
     <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#1E2A2E"/>
-      <stop offset="100%" stop-color="#0A0E10"/>
+      <stop offset="0%" stop-color="#2A3E44"/>
+      <stop offset="100%" stop-color="#152228"/>
     </linearGradient>
     <linearGradient id="sensorGlow" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#6F9D5C" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#6F9D5C" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#8BC34A" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#8BC34A" stop-opacity="0.02"/>
     </linearGradient>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#161E21" stroke-width="0.8"/>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#1A2226" stroke-width="1"/>
     </pattern>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
 
   <!-- background -->
   <rect width="2560" height="1440" fill="#0A0E10"/>
   <rect width="2560" height="1440" fill="url(#grid)"/>
 
-  <!-- road surface -->
-  <rect x="0" y="780" width="2560" height="180" fill="#141C1F"/>
-  <line x1="200" y1="870" x2="320" y2="870" stroke="#333" stroke-width="4" stroke-dasharray="16 12"/>
-  <line x1="400" y1="870" x2="520" y2="870" stroke="#333" stroke-width="4" stroke-dasharray="16 12"/>
-  <line x1="600" y1="870" x2="720" y2="870" stroke="#333" stroke-width="4" stroke-dasharray="16 12"/>
-  <line x1="800" y1="870" x2="920" y2="870" stroke="#333" stroke-width="4" stroke-dasharray="16 12"/>
-  <line x1="1000" y1="870" x2="1120" y2="870" stroke="#333" stroke-width="4" stroke-dasharray="16 12"/>
-  <line x1="1200" y1="870" x2="1320" y2="870" stroke="#333" stroke-width="4" stroke-dasharray="16 12"/>
-  <line x1="1400" y1="870" x2="1520" y2="870" stroke="#333" stroke-width="4" stroke-dasharray="16 12"/>
-  <line x1="1600" y1="870" x2="1720" y2="870" stroke="#333" stroke-width="4" stroke-dasharray="16 12"/>
-  <line x1="1800" y1="870" x2="1920" y2="870" stroke="#333" stroke-width="4" stroke-dasharray="16 12"/>
-  <line x1="2000" y1="870" x2="2120" y2="870" stroke="#333" stroke-width="4" stroke-dasharray="16 12"/>
-  <line x1="2200" y1="870" x2="2320" y2="870" stroke="#333" stroke-width="4" stroke-dasharray="16 12"/>
+  <!-- road -->
+  <rect x="0" y="790" width="2560" height="160" fill="#1A2226"/>
+  <line x1="150" y1="870" x2="280" y2="870" stroke="#3A4A4E" stroke-width="5" stroke-dasharray="14 10"/>
+  <line x1="380" y1="870" x2="510" y2="870" stroke="#3A4A4E" stroke-width="5" stroke-dasharray="14 10"/>
+  <line x1="610" y1="870" x2="740" y2="870" stroke="#3A4A4E" stroke-width="5" stroke-dasharray="14 10"/>
+  <line x1="840" y1="870" x2="970" y2="870" stroke="#3A4A4E" stroke-width="5" stroke-dasharray="14 10"/>
+  <!-- drivable area tint -->
+  <rect x="0" y="790" width="2560" height="160" fill="#8BC34A" opacity="0.04"/>
 
   <!-- sensor cone -->
-  <path d="M780,610 L620,420 Q780,330 940,420 Z" fill="url(#sensorGlow)" opacity="0.7"/>
-  <path d="M780,610 L620,420 Q780,330 940,420" fill="none" stroke="#6F9D5C" stroke-width="2" opacity="0.4"/>
+  <path d="M720,585 L560,380 Q720,290 880,380 Z" fill="url(#sensorGlow)"/>
+  <path d="M720,585 L560,380 Q720,290 880,380" fill="none" stroke="#8BC34A" stroke-width="3" opacity="0.6"/>
+  <path d="M620,440 Q720,380 820,440" fill="none" stroke="#8BC34A" stroke-width="1.5" opacity="0.3" stroke-dasharray="6 6"/>
 
   <!-- car body -->
-  <rect x="720" y="610" width="120" height="85" rx="22" fill="url(#bodyGrad)" stroke="#3A4A50" stroke-width="2.5"/>
-  <rect x="733" y="618" width="94" height="24" rx="8" fill="#1A2326" stroke="#2A3A40" stroke-width="1.2"/>
-  <rect x="738" y="670" width="84" height="14" rx="6" fill="#1A2326" stroke="#2A3A40" stroke-width="1.2"/>
+  <rect x="650" y="585" width="140" height="100" rx="28" fill="url(#bodyGrad)" stroke="#4A6A72" stroke-width="3.5"/>
+  <rect x="668" y="596" width="104" height="28" rx="10" fill="#1A2A30" stroke="#3A5258" stroke-width="2"/>
+  <rect x="673" y="658" width="94" height="16" rx="6" fill="#1A2A30" stroke="#3A5258" stroke-width="2"/>
+  <!-- wheels -->
+  <rect x="644" y="608" width="10" height="20" rx="4" fill="#2A3E44" stroke="#4A6A72" stroke-width="1.5"/>
+  <rect x="644" y="650" width="10" height="20" rx="4" fill="#2A3E44" stroke="#4A6A72" stroke-width="1.5"/>
+  <rect x="786" y="608" width="10" height="20" rx="4" fill="#2A3E44" stroke="#4A6A72" stroke-width="1.5"/>
+  <rect x="786" y="650" width="10" height="20" rx="4" fill="#2A3E44" stroke="#4A6A72" stroke-width="1.5"/>
 
   <!-- left eye -->
-  <circle cx="755" cy="590" r="20" fill="#111719" stroke="#6F9D5C" stroke-width="3"/>
-  <circle cx="755" cy="590" r="10" fill="#0A0E10" stroke="#6F9D5C" stroke-width="1.8"/>
-  <circle cx="755" cy="590" r="5" fill="#6F9D5C"/>
-  <circle cx="752" cy="587" r="2.2" fill="#A0D490"/>
+  <g filter="url(#glow)">
+    <circle cx="695" cy="562" r="28" fill="#111D22" stroke="#8BC34A" stroke-width="4"/>
+    <circle cx="695" cy="562" r="14" fill="#0A1215" stroke="#8BC34A" stroke-width="2.5"/>
+    <circle cx="695" cy="562" r="7" fill="#8BC34A"/>
+    <circle cx="691" cy="558" r="3" fill="#C5E1A5"/>
+  </g>
 
   <!-- right eye -->
-  <circle cx="805" cy="590" r="20" fill="#111719" stroke="#6F9D5C" stroke-width="3"/>
-  <circle cx="805" cy="590" r="10" fill="#0A0E10" stroke="#6F9D5C" stroke-width="1.8"/>
-  <circle cx="805" cy="590" r="5" fill="#6F9D5C"/>
-  <circle cx="802" cy="587" r="2.2" fill="#A0D490"/>
+  <g filter="url(#glow)">
+    <circle cx="745" cy="562" r="28" fill="#111D22" stroke="#8BC34A" stroke-width="4"/>
+    <circle cx="745" cy="562" r="14" fill="#0A1215" stroke="#8BC34A" stroke-width="2.5"/>
+    <circle cx="745" cy="562" r="7" fill="#8BC34A"/>
+    <circle cx="741" cy="558" r="3" fill="#C5E1A5"/>
+  </g>
 
   <!-- radar dots -->
-  <circle cx="660" cy="630" r="3" fill="#CF5F6B" opacity="0.6"/>
-  <circle cx="680" cy="560" r="2.5" fill="#CF5F6B" opacity="0.5"/>
-  <circle cx="900" cy="620" r="3" fill="#CF5F6B" opacity="0.6"/>
-  <circle cx="910" cy="660" r="2.5" fill="#CF5F6B" opacity="0.4"/>
-  <circle cx="700" cy="530" r="2.5" fill="#CF5F6B" opacity="0.45"/>
-  <circle cx="860" cy="540" r="2.5" fill="#CF5F6B" opacity="0.5"/>
+  <circle cx="590" cy="610" r="5" fill="#EF5350" opacity="0.8"/>
+  <circle cx="615" cy="530" r="4" fill="#EF5350" opacity="0.7"/>
+  <circle cx="860" cy="600" r="5" fill="#EF5350" opacity="0.8"/>
+  <circle cx="870" cy="660" r="4" fill="#EF5350" opacity="0.6"/>
+  <circle cx="635" cy="490" r="3.5" fill="#EF5350" opacity="0.6"/>
+  <circle cx="805" cy="495" r="3.5" fill="#EF5350" opacity="0.65"/>
 
   <!-- detected objects on road -->
-  <rect x="350" y="810" width="50" height="80" rx="4" fill="none" stroke="#CF5F6B" stroke-width="2" opacity="0.5"/>
-  <rect x="1100" y="800" width="55" height="85" rx="4" fill="none" stroke="#CF5F6B" stroke-width="2" opacity="0.4"/>
-  <rect x="1800" y="815" width="48" height="75" rx="4" fill="none" stroke="#CF5F6B" stroke-width="2" opacity="0.35"/>
+  <rect x="300" y="810" width="60" height="90" rx="6" fill="none" stroke="#EF5350" stroke-width="2.5" opacity="0.5"/>
+  <text x="370" y="830" font-family="sans-serif" font-size="16" fill="#EF5350" opacity="0.5">ID 3</text>
+  <rect x="1050" y="800" width="65" height="95" rx="6" fill="none" stroke="#EF5350" stroke-width="2.5" opacity="0.4"/>
+  <text x="1125" y="825" font-family="sans-serif" font-size="16" fill="#EF5350" opacity="0.4">ID 7</text>
 
-  <!-- drivable area highlight -->
-  <rect x="0" y="780" width="2560" height="180" fill="#6F9D5C" opacity="0.04"/>
-
-  <!-- text -->
-  <text x="1500" y="590" font-family="sans-serif" font-weight="700" font-size="84" fill="#EDF1F1" letter-spacing="0.02em">자율주행 연구일지</text>
-  <text x="1500" y="660" font-family="sans-serif" font-weight="300" font-size="32" fill="#78878C" letter-spacing="0.08em">AUTONOMOUS DRIVING LAB NOTES</text>
-  <line x1="1500" y1="690" x2="1720" y2="690" stroke="#6F9D5C" stroke-width="2" opacity="0.5"/>
-  <text x="1500" y="730" font-family="sans-serif" font-weight="300" font-size="26" fill="#78878C">BEV Perception · Sensor Fusion · Edge Deployment</text>
+  <!-- text — right side, large and clear -->
+  <text x="1440" y="560" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-weight="800" font-size="96" fill="#F0F4F0" letter-spacing="0.02em">자율주행 연구일지</text>
+  <text x="1440" y="640" font-family="sans-serif" font-weight="400" font-size="36" fill="#78908C" letter-spacing="0.08em">AUTONOMOUS DRIVING LAB NOTES</text>
+  <line x1="1440" y1="675" x2="1700" y2="675" stroke="#8BC34A" stroke-width="3" opacity="0.6"/>
+  <text x="1440" y="720" font-family="sans-serif" font-weight="300" font-size="28" fill="#78908C">BEV Perception · Sensor Fusion · Edge Deployment</text>
 </svg>

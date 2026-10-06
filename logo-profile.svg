@@ -1,57 +1,74 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
   <defs>
     <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#1E2A2E"/>
-      <stop offset="100%" stop-color="#0A0E10"/>
+      <stop offset="0%" stop-color="#2A3E44"/>
+      <stop offset="100%" stop-color="#152228"/>
     </linearGradient>
     <linearGradient id="sensorGlow" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#6F9D5C" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#6F9D5C" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#8BC34A" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#8BC34A" stop-opacity="0.02"/>
     </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
 
   <!-- background -->
-  <rect width="400" height="400" rx="40" fill="#0A0E10"/>
-  <rect width="400" height="400" rx="40" fill="none" stroke="#222D31" stroke-width="1.5"/>
+  <rect width="400" height="400" rx="44" fill="#0A0E10"/>
+  <rect width="400" height="400" rx="44" fill="none" stroke="#2A3A40" stroke-width="2"/>
 
   <!-- road -->
-  <rect x="40" y="265" width="320" height="45" rx="4" fill="#141C1F"/>
-  <line x1="80" y1="288" x2="120" y2="288" stroke="#333" stroke-width="2.5" stroke-dasharray="8 6"/>
-  <line x1="145" y1="288" x2="185" y2="288" stroke="#333" stroke-width="2.5" stroke-dasharray="8 6"/>
-  <line x1="210" y1="288" x2="250" y2="288" stroke="#333" stroke-width="2.5" stroke-dasharray="8 6"/>
-  <line x1="275" y1="288" x2="315" y2="288" stroke="#333" stroke-width="2.5" stroke-dasharray="8 6"/>
+  <rect x="30" y="260" width="340" height="50" rx="6" fill="#1A2226"/>
+  <line x1="70" y1="285" x2="120" y2="285" stroke="#3A4A4E" stroke-width="3.5" stroke-dasharray="10 8"/>
+  <line x1="150" y1="285" x2="200" y2="285" stroke="#3A4A4E" stroke-width="3.5" stroke-dasharray="10 8"/>
+  <line x1="230" y1="285" x2="280" y2="285" stroke="#3A4A4E" stroke-width="3.5" stroke-dasharray="10 8"/>
+  <line x1="310" y1="285" x2="340" y2="285" stroke="#3A4A4E" stroke-width="3.5" stroke-dasharray="10 8"/>
 
   <!-- sensor detection cone -->
-  <path d="M200,195 L105,115 Q200,78 295,115 Z" fill="url(#sensorGlow)" opacity="0.7"/>
-  <path d="M200,195 L105,115 Q200,78 295,115" fill="none" stroke="#6F9D5C" stroke-width="1.2" opacity="0.5"/>
+  <path d="M200,185 L100,100 Q200,55 300,100 Z" fill="url(#sensorGlow)"/>
+  <path d="M200,185 L100,100 Q200,55 300,100" fill="none" stroke="#8BC34A" stroke-width="2" opacity="0.7"/>
+  <!-- sensor range rings -->
+  <path d="M130,120 Q200,85 270,120" fill="none" stroke="#8BC34A" stroke-width="1" opacity="0.35" stroke-dasharray="4 4"/>
+  <path d="M155,145 Q200,118 245,145" fill="none" stroke="#8BC34A" stroke-width="1" opacity="0.25" stroke-dasharray="4 4"/>
 
-  <!-- car body -->
-  <rect x="145" y="195" width="110" height="75" rx="20" fill="url(#bodyGrad)" stroke="#3A4A50" stroke-width="2"/>
+  <!-- car body — bigger and clearer -->
+  <rect x="140" y="185" width="120" height="82" rx="22" fill="url(#bodyGrad)" stroke="#4A6A72" stroke-width="2.5"/>
   <!-- windshield -->
-  <rect x="158" y="202" width="84" height="22" rx="7" fill="#1A2326" stroke="#2A3A40" stroke-width="1"/>
+  <rect x="155" y="194" width="90" height="24" rx="8" fill="#1A2A30" stroke="#3A5258" stroke-width="1.5"/>
   <!-- rear window -->
-  <rect x="163" y="250" width="74" height="12" rx="5" fill="#1A2326" stroke="#2A3A40" stroke-width="1"/>
+  <rect x="160" y="246" width="80" height="13" rx="5" fill="#1A2A30" stroke="#3A5258" stroke-width="1.5"/>
+  <!-- wheel hints -->
+  <rect x="136" y="200" width="8" height="16" rx="3" fill="#2A3E44" stroke="#4A6A72" stroke-width="1"/>
+  <rect x="136" y="240" width="8" height="16" rx="3" fill="#2A3E44" stroke="#4A6A72" stroke-width="1"/>
+  <rect x="256" y="200" width="8" height="16" rx="3" fill="#2A3E44" stroke="#4A6A72" stroke-width="1"/>
+  <rect x="256" y="240" width="8" height="16" rx="3" fill="#2A3E44" stroke="#4A6A72" stroke-width="1"/>
 
-  <!-- left eye -->
-  <circle cx="175" cy="178" r="18" fill="#111719" stroke="#6F9D5C" stroke-width="2.5"/>
-  <circle cx="175" cy="178" r="9" fill="#0A0E10" stroke="#6F9D5C" stroke-width="1.5"/>
-  <circle cx="175" cy="178" r="4.5" fill="#6F9D5C"/>
-  <circle cx="172" cy="175" r="2" fill="#A0D490"/>
+  <!-- left eye — bigger, brighter -->
+  <g filter="url(#glow)">
+    <circle cx="172" cy="168" r="22" fill="#111D22" stroke="#8BC34A" stroke-width="3"/>
+    <circle cx="172" cy="168" r="11" fill="#0A1215" stroke="#8BC34A" stroke-width="2"/>
+    <circle cx="172" cy="168" r="5.5" fill="#8BC34A"/>
+    <circle cx="169" cy="165" r="2.5" fill="#C5E1A5"/>
+  </g>
 
-  <!-- right eye -->
-  <circle cx="225" cy="178" r="18" fill="#111719" stroke="#6F9D5C" stroke-width="2.5"/>
-  <circle cx="225" cy="178" r="9" fill="#0A0E10" stroke="#6F9D5C" stroke-width="1.5"/>
-  <circle cx="225" cy="178" r="4.5" fill="#6F9D5C"/>
-  <circle cx="222" cy="175" r="2" fill="#A0D490"/>
+  <!-- right eye — bigger, brighter -->
+  <g filter="url(#glow)">
+    <circle cx="228" cy="168" r="22" fill="#111D22" stroke="#8BC34A" stroke-width="3"/>
+    <circle cx="228" cy="168" r="11" fill="#0A1215" stroke="#8BC34A" stroke-width="2"/>
+    <circle cx="228" cy="168" r="5.5" fill="#8BC34A"/>
+    <circle cx="225" cy="165" r="2.5" fill="#C5E1A5"/>
+  </g>
 
-  <!-- radar dots -->
-  <circle cx="115" cy="210" r="2.5" fill="#CF5F6B" opacity="0.6"/>
-  <circle cx="135" cy="160" r="2" fill="#CF5F6B" opacity="0.5"/>
-  <circle cx="275" cy="200" r="2.5" fill="#CF5F6B" opacity="0.6"/>
-  <circle cx="285" cy="235" r="2" fill="#CF5F6B" opacity="0.4"/>
-  <circle cx="148" cy="140" r="2" fill="#CF5F6B" opacity="0.45"/>
-  <circle cx="252" cy="145" r="2" fill="#CF5F6B" opacity="0.5"/>
+  <!-- radar/detection dots — bigger, brighter -->
+  <circle cx="108" cy="205" r="3.5" fill="#EF5350" opacity="0.8"/>
+  <circle cx="125" cy="155" r="3" fill="#EF5350" opacity="0.7"/>
+  <circle cx="285" cy="195" r="3.5" fill="#EF5350" opacity="0.8"/>
+  <circle cx="295" cy="240" r="3" fill="#EF5350" opacity="0.6"/>
+  <circle cx="140" cy="130" r="2.5" fill="#EF5350" opacity="0.6"/>
+  <circle cx="260" cy="135" r="2.5" fill="#EF5350" opacity="0.65"/>
 
-  <!-- channel name -->
-  <text x="200" y="350" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="30" fill="#EDF1F1">자율주행 연구일지</text>
+  <!-- channel name — bigger, bolder -->
+  <text x="200" y="348" text-anchor="middle" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-weight="800" font-size="32" fill="#F0F4F0" letter-spacing="0.02em">자율주행 연구일지</text>
+  <text x="200" y="376" text-anchor="middle" font-family="sans-serif" font-weight="400" font-size="12" fill="#78908C" letter-spacing="0.1em">AUTONOMOUS DRIVING LAB NOTES</text>
 </svg>
