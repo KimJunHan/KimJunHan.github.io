@@ -20,6 +20,7 @@ const navItems = [
   ["History", "history"],
   ["Projects", "projects"],
   ["Publications", "publications"],
+  ["Community", "community"],
   ["Contact", "contact"],
 ];
 
