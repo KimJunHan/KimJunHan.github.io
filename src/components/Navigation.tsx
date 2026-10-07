@@ -25,15 +25,16 @@ const navItems = [
 ];
 
 const langs = [
-  { code: "us", label: "English", title: "English" },
-  { code: "kr", label: "KO", title: "한국어" },
-  { code: "cn", label: "ZH", title: "中文" },
-  { code: "jp", label: "JA", title: "日本語" },
+  { code: "us", key: "en", title: "English" },
+  { code: "kr", key: "ko", title: "한국어" },
+  { code: "cn", key: "zh", title: "中文" },
+  { code: "jp", key: "ja", title: "日本語" },
 ];
 
 function Navigation() {
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
+  const [activeLang, setActiveLang] = useState<string>("en");
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -119,11 +120,11 @@ function Navigation() {
           </Box>
           <Box className="lang-selector">
             {langs.map((lang) => (
-              <a
+              <button
                 key={lang.code}
-                href={lang.code === "us" ? "/" : `/${lang.code === "kr" ? "ko" : lang.code === "jp" ? "ja" : "zh"}/`}
-                className={`lang-flag${lang.code === "us" ? " active" : ""}`}
+                className={`lang-flag${activeLang === lang.key ? " active" : ""}`}
                 title={lang.title}
+                onClick={() => setActiveLang(lang.key)}
               >
                 <img
                   src={`https://flagcdn.com/w40/${lang.code}.png`}
@@ -131,7 +132,7 @@ function Navigation() {
                   width="24"
                   height="17"
                 />
-              </a>
+              </button>
             ))}
           </Box>
         </Toolbar>

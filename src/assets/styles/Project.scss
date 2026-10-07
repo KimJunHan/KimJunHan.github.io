@@ -6,9 +6,9 @@
 }
 
 .projects-container .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .projects-container .projects-grid .project {
@@ -24,9 +24,9 @@
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 10px;
   padding: 0;
-  min-height: 220px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: stretch;
   position: relative;
   overflow: hidden;
 
@@ -113,19 +113,27 @@
   }
 }
 
+/* ---------- Project Image (KETI) ---------- */
+.project-image {
+  width: 35%;
+  object-fit: cover;
+  display: block;
+}
+
 /* ---------- Project Banner (gradient + icon) ---------- */
 .project-banner {
-  height: 140px;
+  width: 35%;
+  min-height: 180px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  position: relative;
+  flex-shrink: 0;
 
   svg {
-    width: 48px;
-    height: 48px;
+    width: 56px;
+    height: 56px;
     color: rgba(255, 255, 255, 0.85);
   }
 
@@ -153,22 +161,6 @@
   background: linear-gradient(135deg, #4a148c 0%, #7b1fa2 50%, #ab47bc 100%);
 }
 
-/* ---------- Featured (KETI full-width with image) ---------- */
-.project-featured {
-  grid-column: 1 / -1;
-
-  .project-card {
-    flex-direction: row;
-    align-items: stretch;
-  }
-
-  .project-image {
-    width: 40%;
-    object-fit: cover;
-    display: block;
-  }
-}
-
 /* ---------- Zoom ---------- */
 .zoom {
   border-radius: 10px;
@@ -184,31 +176,21 @@
 /* ---------- Responsive ---------- */
 @media screen and (max-width: 700px) {
   .projects-container {
-    display: block;
     padding-left: 5%;
     padding-right: 5%;
   }
 
-  .projects-container .projects-grid {
-    display: block;
+  .project-card {
+    flex-direction: column !important;
   }
 
-  .projects-container .projects-grid .project {
-    padding-bottom: 5%;
-  }
-
-  .project-featured {
-    .project-card {
-      flex-direction: column;
-    }
-
-    .project-image {
-      width: 100%;
-      max-height: 200px;
-    }
+  .project-image {
+    width: 100%;
+    max-height: 200px;
   }
 
   .project-banner {
-    height: 120px;
+    width: 100%;
+    min-height: 120px;
   }
 }

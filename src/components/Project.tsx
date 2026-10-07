@@ -33,7 +33,7 @@ function Project() {
           </a>
         </div>
 
-        <div className="project">
+        <div className="project project-featured">
           <a href={process.env.PUBLIC_URL + "/projects/mvision-hi/"}>
             <div className="project-card zoom">
               <div className="project-banner banner-mvision-hi">
@@ -63,7 +63,7 @@ function Project() {
           </a>
         </div>
 
-        <div className="project">
+        <div className="project project-featured">
           <a href={process.env.PUBLIC_URL + "/projects/mvision-pop/"}>
             <div className="project-card zoom">
               <div className="project-banner banner-mvision-pop">
@@ -92,7 +92,7 @@ function Project() {
           </a>
         </div>
 
-        <div className="project">
+        <div className="project project-featured">
           <a href={process.env.PUBLIC_URL + "/projects/h2go/"}>
             <div className="project-card zoom">
               <div className="project-banner banner-h2go">
@@ -121,7 +121,7 @@ function Project() {
           </a>
         </div>
 
-        <div className="project">
+        <div className="project project-featured">
           <a href={process.env.PUBLIC_URL + "/projects/humancentric/"}>
             <div className="project-card zoom">
               <div className="project-banner banner-humancentric">
