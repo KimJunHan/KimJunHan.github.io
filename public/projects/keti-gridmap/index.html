@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Semantic Grid Map for Drivable Area — Junhan Kim</title>
+<meta name="description" content="Development of a semantic grid map method for drivable area analysis in urban environments using Cross-Mamba Attention and DS-theory fusion.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0A0E10;--panel:#111719;--line:#222D31;--line-soft:#1A2326;--text:#DDE3E4;--mute:#78878C;--drivable:#6F9D5C;--walkway:#7E88C0;--stopline:#CF5F6B;--ego:#F3F0E6}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--text);font-family:"IBM Plex Sans",system-ui,sans-serif;font-weight:300;font-size:16px;line-height:1.72;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--walkway);outline-offset:3px}
+
+.topbar{border-bottom:1px solid var(--line-soft);padding:1rem 0}
+.topbar .wrap{display:flex;align-items:center;gap:1rem}
+.back{color:var(--mute);text-decoration:none;font-size:.85rem;display:flex;align-items:center;gap:.4rem;transition:color .15s}
+.back:hover{color:var(--text)}
+.topbar-name{font-family:"Space Grotesk",sans-serif;font-weight:500;font-size:.95rem;color:var(--ego);margin-left:auto}
+
+.wrap{max-width:1020px;margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+
+.proj-hero{padding:clamp(48px,8vh,96px) 0 clamp(40px,6vh,72px);border-bottom:1px solid var(--line-soft)}
+.proj-hero .badge{display:inline-block;padding:.3em .9em;border:1px solid rgba(111,157,92,.5);color:var(--drivable);font-size:.78rem;margin-bottom:1.2rem}
+.proj-hero h1{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:clamp(1.8rem,5vw,3rem);line-height:1.1;margin:0 0 .5rem;color:var(--ego)}
+.proj-hero .subtitle{font-size:clamp(1rem,2.5vw,1.15rem);color:#B9C3C5;margin:0 0 1.5rem;max-width:60ch}
+.proj-hero .meta{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;font-size:.85rem;color:var(--mute)}
+
+section{padding:clamp(48px,8vh,80px) 0;border-bottom:1px solid var(--line-soft)}
+section:last-of-type{border-bottom:none}
+h2{font-family:"Space Grotesk",sans-serif;font-weight:500;font-size:clamp(1.3rem,3.5vw,1.7rem);margin:0 0 1.5rem;color:#EDF1F1}
+p{max-width:68ch;line-height:1.82;color:#C6CFD1;margin:.6rem 0}
+
+.results{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--line-soft);margin:2rem 0;border:1px solid var(--line-soft)}
+.result-card{background:var(--ink);padding:1.3rem 1.4rem}
+.result-card dt{color:var(--mute);font-size:.78rem;margin-bottom:.4rem}
+.result-card dd{margin:0;font-family:"Space Grotesk",sans-serif;font-size:1.35rem;color:#EDF1F1;line-height:1.2}
+
+.tag-list{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.5rem;margin:1.5rem 0}
+.tag-list li{font-size:.82rem;padding:.35em .85em;border:1px solid var(--line);color:#CBD4D5;font-family:"Space Grotesk",sans-serif}
+
+.spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;margin:2rem 0}
+.spec-group h3{font-family:"Space Grotesk",sans-serif;font-weight:500;font-size:1rem;color:#EDF1F1;margin:0 0 .8rem;padding-bottom:.5rem;border-bottom:1px solid var(--line-soft)}
+.spec-group ul{list-style:none;padding:0;margin:0}
+.spec-group li{padding:.35rem 0;font-size:.9rem;color:#BAC4C6;border-bottom:1px solid var(--line-soft)}
+.spec-group li:last-child{border-bottom:none}
+.spec-group li span{color:var(--mute);font-size:.82rem}
+
+.fig{margin:2rem 0;text-align:center}
+.fig img{max-width:100%;border:1px solid var(--line-soft);border-radius:4px}
+.fig figcaption{color:var(--mute);font-size:.82rem;margin-top:.6rem}
+
+footer{padding:2.6rem 0 3.4rem;color:var(--mute);font-size:.8rem;border-top:1px solid var(--line-soft)}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="wrap">
+    <a class="back" href="../../">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.4"/></svg>
+      Back
+    </a>
+    <span class="topbar-name">Junhan Kim</span>
+  </div>
+</nav>
+
+<header class="proj-hero">
+  <div class="wrap">
+    <span class="badge">National R&D &middot; KETI</span>
+    <h1>Semantic Grid Map for Drivable Area Analysis</h1>
+    <p class="subtitle">Camera-based BEV segmentation with Cross-Mamba Attention and Dempster-Shafer theory fusion for real-time drivable area perception in urban environments</p>
+    <div class="meta">
+      <span>National project (RS-2024-00445826)</span>
+      <span>2024 &mdash; present</span>
+      <span>KETI funded</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="wrap">
+    <h2>Overview</h2>
+    <p>
+      This project develops a semantic grid map method for analyzing drivable areas in urban
+      environments. The system converts surround-view camera images into a bird's-eye-view (BEV)
+      semantic segmentation, then fuses the results into a probabilistic occupancy grid map
+      using Dempster-Shafer evidence theory.
+    </p>
+    <p>
+      The pipeline spans depth estimation via Pseudo-LiDAR, BEV segmentation using a novel
+      Cross-Mamba Attention mechanism, DS-theory based temporal fusion, and real-time ROS
+      deployment on embedded platforms including NVIDIA Jetson AGX Orin and Thor.
+    </p>
+    <figure class="fig">
+      <img src="../../images/projects/keti-cover.jpg" alt="Urban autonomous driving perception">
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Model architecture</h2>
+    <p>
+      The BEV segmentation model (SegMam) replaces the conventional Transformer attention
+      with a Cross-Mamba Attention module based on the Vision Mamba Selective State Space Model.
+      This reduces quadratic computational complexity to linear while maintaining accuracy
+      through multi-modal cross-attention over image features and depth features.
+    </p>
+    <p>
+      Depth information is obtained via Pseudo-LiDAR, which converts monocular depth estimation
+      into 3D point cloud representation, enabling camera-only systems to approximate
+      LiDAR-like spatial reasoning.
+    </p>
+    <figure class="fig">
+      <img src="../../images/projects/keti-sensor.jpeg" alt="Sensor configuration and nuScenes dataset">
+      <figcaption>Multi-sensor vehicle configuration and nuScenes HD map annotation</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>DS-theory probabilistic fusion</h2>
+    <p>
+      The semantic BEV predictions are fused over time using Dempster-Shafer evidence theory.
+      A distance-based confidence weighting reduces over-confidence at far ranges, and
+      temporal fusion via the Dempster combination rule accumulates evidence across frames
+      to minimize conflict mass and improve grid map reliability.
+    </p>
+    <figure class="fig">
+      <img src="../../images/projects/keti-ds-theory.png" alt="DS-theory fusion pipeline" style="background:#fff;padding:1rem;">
+      <figcaption>Dempster-Shafer theory fusion pipeline with distance-confidence weighting</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Key results</h2>
+    <dl class="results">
+      <div class="result-card"><dt>Drivable Area IoU</dt><dd>81.6%</dd></div>
+      <div class="result-card"><dt>DS Fusion gain</dt><dd>+1% IoU</dd></div>
+      <div class="result-card"><dt>Labeled scenes</dt><dd>119</dd></div>
+      <div class="result-card"><dt>OccupancyGrid</dt><dd>20 Hz</dd></div>
+    </dl>
+    <p>
+      Evaluated on the nuScenes dataset with 119 KETI-labeled scenes. The DS fusion
+      consistently improves IoU over single-frame predictions. The system is deployed
+      as a ROS OccupancyGrid at 20 Hz, and has been optimized for embedded inference
+      on Jetson AGX Orin (44 ms) and AGX Thor (22 ms) via ONNX and TensorRT.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Platform specifications</h2>
+    <div class="spec-grid">
+      <div class="spec-group">
+        <h3>Sensors</h3>
+        <ul>
+          <li>6&times; surround-view cameras <span>&mdash; 20 Hz</span></li>
+          <li>1&times; LiDAR (Velodyne) <span>&mdash; 20 Hz</span></li>
+          <li>GPS / RTK positioning</li>
+          <li>IMU <span>&mdash; 200 Hz</span></li>
+        </ul>
+      </div>
+      <div class="spec-group">
+        <h3>Output interface</h3>
+        <ul>
+          <li>nav_msgs/OccupancyGrid <span>&mdash; ROS message</span></li>
+          <li>0.3 m cell resolution</li>
+          <li>200 &times; 120 grid cells</li>
+          <li>20 Hz publication rate</li>
+        </ul>
+      </div>
+      <div class="spec-group">
+        <h3>Deployment</h3>
+        <ul>
+          <li>NVIDIA Jetson AGX Orin <span>&mdash; 44 ms</span></li>
+          <li>NVIDIA AGX Thor <span>&mdash; 22 ms</span></li>
+          <li>ONNX + TensorRT optimization</li>
+          <li>KIAPI certified evaluation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Technical stack</h2>
+    <ul class="tag-list">
+      <li>PyTorch</li>
+      <li>ROS 2</li>
+      <li>ONNX</li>
+      <li>TensorRT</li>
+      <li>Python</li>
+      <li>OpenCV</li>
+      <li>Pseudo-LiDAR</li>
+      <li>Cross-Mamba Attention</li>
+      <li>Dempster-Shafer Theory</li>
+      <li>OccupancyGrid</li>
+      <li>Jetson AGX Orin</li>
+      <li>nuScenes</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">&copy; 2026 Junhan Kim</div>
+</footer>
+
+</body>
+</html>
