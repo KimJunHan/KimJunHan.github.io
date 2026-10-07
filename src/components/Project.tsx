@@ -5,44 +5,23 @@ function Project() {
   return (
     <div className="projects-container" id="projects">
       <h1>Industry Projects</h1>
-      <p style={{ color: "#666", marginBottom: "1.5rem" }}>
-        Anyractive &amp; National R&amp;D (2021 &mdash; 2024)
-      </p>
       <div className="projects-grid">
         <div className="project">
           <div className="project-card zoom">
-            <span className="project-tag">National Project</span>
+            <span className="project-tag">National R&amp;D</span>
             <span className="project-venue">KETI</span>
-            <h2>Drivable Area Perception</h2>
+            <h2>Semantic Grid Map for Drivable Area Analysis</h2>
             <p className="project-subtitle">
-              Semantic grid map for drivable area analysis with Cross-Mamba attention &amp; DS fusion
+              Camera-based BEV segmentation with Cross-Mamba Attention &amp; Pseudo-LiDAR fusion, DS-theory probabilistic grid map, and ROS OccupancyGrid deployment
             </p>
             <ul className="project-metrics">
               <li className="highlight">Drivable IoU 81.6%</li>
               <li>DS Fusion +1% IoU</li>
               <li>119 Scenes Labeled</li>
               <li>OccupancyGrid @ 20 Hz</li>
+              <li>Jetson / Thor Deployment</li>
             </ul>
           </div>
-        </div>
-
-        <div className="project">
-          <a href={process.env.PUBLIC_URL + "/projects/vehicle-pipeline/"}>
-            <div className="project-card zoom">
-              <span className="project-tag">National Project</span>
-              <span className="project-venue">KEIT</span>
-              <h2>Vehicle Data Pipeline</h2>
-              <p className="project-subtitle">
-                ROS perception module &amp; data collection platform
-              </p>
-              <ul className="project-metrics">
-                <li>0.3 m / 200x120 grid</li>
-                <li>OccupancyGrid @ 10 Hz</li>
-                <li>119 scenes labeled</li>
-                <li>KIAPI certification</li>
-              </ul>
-            </div>
-          </a>
         </div>
         <div className="project">
           <a href={process.env.PUBLIC_URL + "/projects/mvision-hi/"}>
