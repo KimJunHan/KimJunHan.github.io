@@ -7,7 +7,7 @@ import SvgIcon from "@mui/material/SvgIcon";
 function NaverIcon(props: any) {
   return (
     <SvgIcon {...props} viewBox="0 0 24 24">
-      <path d="M16.27 3H7.73v18h2.77v-9.03L15.5 21h2.77V3h-2.77v9.03L10.5 3h-.77z" fill="currentColor"/>
+      <path d="M16.273 12.845 7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727v12.845Z" fill="currentColor"/>
     </SvgIcon>
   );
 }
