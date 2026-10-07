@@ -1,8 +1,16 @@
 import React from "react";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import ArticleIcon from "@mui/icons-material/Article";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import SvgIcon from "@mui/material/SvgIcon";
+
+function NaverIcon(props: any) {
+  return (
+    <SvgIcon {...props} viewBox="0 0 24 24">
+      <path d="M16.27 3H7.73v18h2.77v-9.03L15.5 21h2.77V3h-2.77v9.03L10.5 3h-.77z" fill="currentColor"/>
+    </SvgIcon>
+  );
+}
 import { useLang } from "../i18n/LanguageContext";
 import { t } from "../i18n/translations";
 import "../assets/styles/Main.scss";
@@ -19,7 +27,7 @@ function Main() {
         <YouTubeIcon />
       </a>
       <a href="https://blog.naver.com/kim_jun_han" target="_blank" rel="noreferrer">
-        <ArticleIcon />
+        <NaverIcon />
       </a>
       <a href="https://www.linkedin.com/in/junhan-kim-a82b09207/" target="_blank" rel="noreferrer">
         <LinkedInIcon />

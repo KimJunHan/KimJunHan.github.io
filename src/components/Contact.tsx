@@ -2,13 +2,21 @@ import React, { useState } from "react";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import ArticleIcon from "@mui/icons-material/Article";
 import SchoolIcon from "@mui/icons-material/School";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import SendIcon from "@mui/icons-material/Send";
+import SvgIcon from "@mui/material/SvgIcon";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
+
+function NaverIcon(props: any) {
+  return (
+    <SvgIcon {...props} viewBox="0 0 24 24">
+      <path d="M16.27 3H7.73v18h2.77v-9.03L15.5 21h2.77V3h-2.77v9.03L10.5 3h-.77z" fill="currentColor"/>
+    </SvgIcon>
+  );
+}
 import { useLang } from "../i18n/LanguageContext";
 import { t } from "../i18n/translations";
 import "../assets/styles/Contact.scss";
@@ -136,7 +144,7 @@ function Contact() {
               rel="noreferrer"
               className="contact-item"
             >
-              <ArticleIcon />
+              <NaverIcon />
               <div>
                 <span className="contact-label">Blog</span>
                 <span className="contact-value">
