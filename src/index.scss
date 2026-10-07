@@ -63,34 +63,34 @@ button {
 /* ---------- Language Selector ---------- */
 .lang-selector {
   display: flex;
-  gap: 6px;
+  gap: 8px;
   align-items: center;
   margin-left: auto;
 }
 
 .lang-flag {
   display: block;
-  width: 28px;
-  height: 20px;
-  border-radius: 3px;
+  width: 42px;
+  height: 30px;
+  border-radius: 5px;
   overflow: hidden;
-  border: 1.5px solid rgba(0, 0, 0, 0.12);
+  border: 2px solid rgba(0, 0, 0, 0.15);
   transition: border-color 0.15s, transform 0.15s;
-  opacity: 0.7;
+  opacity: 0.65;
   padding: 0;
   background: none;
   cursor: pointer;
 
   &:hover {
     border-color: #5c7cfa;
-    transform: scale(1.15);
+    transform: scale(1.18);
     opacity: 1;
   }
 
   &.active {
     border-color: #333;
     opacity: 1;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.18);
   }
 
   img {

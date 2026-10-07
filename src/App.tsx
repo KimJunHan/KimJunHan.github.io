@@ -11,6 +11,7 @@ import {
   Footer,
 } from "./components";
 import FadeIn from "./components/FadeIn";
+import { LanguageProvider } from "./i18n/LanguageContext";
 import "./index.scss";
 
 function App() {
@@ -19,19 +20,21 @@ function App() {
   }, []);
 
   return (
-    <div className="main-container">
-      <Navigation />
-      <FadeIn transitionDuration={700}>
-        <Main />
-        <Expertise />
-        <Timeline />
-        <Project />
-        <Publications />
-        <Community />
-        <Contact />
-      </FadeIn>
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="main-container">
+        <Navigation />
+        <FadeIn transitionDuration={700}>
+          <Main />
+          <Expertise />
+          <Timeline />
+          <Project />
+          <Publications />
+          <Community />
+          <Contact />
+        </FadeIn>
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }
 

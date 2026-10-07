@@ -13,28 +13,31 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
+import { useLang } from "../i18n/LanguageContext";
+import { t } from "../i18n/translations";
 
 const drawerWidth = 240;
-const navItems = [
-  ["Expertise", "expertise"],
-  ["History", "history"],
-  ["Projects", "projects"],
-  ["Publications", "publications"],
-  ["Community", "community"],
-  ["Contact", "contact"],
+
+const navKeys = [
+  { key: "nav.expertise" as const, id: "expertise" },
+  { key: "nav.history" as const, id: "history" },
+  { key: "nav.projects" as const, id: "projects" },
+  { key: "nav.publications" as const, id: "publications" },
+  { key: "nav.community" as const, id: "community" },
+  { key: "nav.contact" as const, id: "contact" },
 ];
 
 const langs = [
-  { code: "us", key: "en", title: "English" },
-  { code: "kr", key: "ko", title: "한국어" },
-  { code: "cn", key: "zh", title: "中文" },
-  { code: "jp", key: "ja", title: "日本語" },
+  { code: "us", key: "en" as const, title: "English" },
+  { code: "kr", key: "ko" as const, title: "한국어" },
+  { code: "cn", key: "zh" as const, title: "中文" },
+  { code: "jp", key: "ja" as const, title: "日本語" },
 ];
 
 function Navigation() {
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
-  const [activeLang, setActiveLang] = useState<string>("en");
+  const { lang, setLang } = useLang();
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -75,13 +78,13 @@ function Navigation() {
       </p>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item[0]} disablePadding>
+        {navKeys.map((item) => (
+          <ListItem key={item.id} disablePadding>
             <ListItemButton
               sx={{ textAlign: "center" }}
-              onClick={() => scrollToSection(item[1])}
+              onClick={() => scrollToSection(item.id)}
             >
-              <ListItemText primary={item[0]} />
+              <ListItemText primary={t(item.key, lang)} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -108,29 +111,29 @@ function Navigation() {
             <MenuIcon />
           </IconButton>
           <Box sx={{ display: { xs: "none", sm: "block" }, flex: 1 }}>
-            {navItems.map((item) => (
+            {navKeys.map((item) => (
               <Button
-                key={item[0]}
-                onClick={() => scrollToSection(item[1])}
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
                 sx={{ color: "#333" }}
               >
-                {item[0]}
+                {t(item.key, lang)}
               </Button>
             ))}
           </Box>
           <Box className="lang-selector">
-            {langs.map((lang) => (
+            {langs.map((l) => (
               <button
-                key={lang.code}
-                className={`lang-flag${activeLang === lang.key ? " active" : ""}`}
-                title={lang.title}
-                onClick={() => setActiveLang(lang.key)}
+                key={l.code}
+                className={`lang-flag${lang === l.key ? " active" : ""}`}
+                title={l.title}
+                onClick={() => setLang(l.key)}
               >
                 <img
-                  src={`https://flagcdn.com/w40/${lang.code}.png`}
-                  alt={lang.title}
-                  width="24"
-                  height="17"
+                  src={`https://flagcdn.com/w80/${l.code}.png`}
+                  alt={l.title}
+                  width="36"
+                  height="25"
                 />
               </button>
             ))}

@@ -9,9 +9,12 @@ import SendIcon from "@mui/icons-material/Send";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
+import { useLang } from "../i18n/LanguageContext";
+import { t } from "../i18n/translations";
 import "../assets/styles/Contact.scss";
 
 function Contact() {
+  const { lang } = useLang();
   const [email, setEmail] = useState<string>("");
   const [subject, setSubject] = useState<string>("");
   const [message, setMessage] = useState<string>("");
@@ -45,10 +48,8 @@ function Contact() {
     <div id="contact">
       <div className="items-container">
         <div className="contact_wrapper">
-          <h1>Contact Me</h1>
-          <p>
-            Got a question or want to collaborate? Send me a message!
-          </p>
+          <h1>{t("section.contact", lang)}</h1>
+          <p>{t("contact.subtitle", lang)}</p>
 
           {/* Contact Form */}
           <Box
@@ -101,7 +102,7 @@ function Contact() {
           </Box>
 
           {/* Contact Links */}
-          <h2 className="contact-links-title">Other Ways to Reach Me</h2>
+          <h2 className="contact-links-title">{t("contact.other", lang)}</h2>
           <div className="contact-grid">
             <a
               href="mailto:kimjunhan1605@gmail.com"
