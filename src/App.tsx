@@ -6,6 +6,7 @@ import {
   Project,
   Publications,
   Community,
+  PersonalProject,
   Contact,
   Navigation,
   Footer,
@@ -30,6 +31,7 @@ function App() {
           <Project />
           <Publications />
           <Community />
+          <PersonalProject />
           <Contact />
         </FadeIn>
         <Footer />
