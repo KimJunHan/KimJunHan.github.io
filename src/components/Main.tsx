@@ -3,6 +3,9 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import SvgIcon from "@mui/material/SvgIcon";
+import { useLang } from "../i18n/LanguageContext";
+import { t } from "../i18n/translations";
+import "../assets/styles/Main.scss";
 
 function NaverIcon(props: any) {
   return (
@@ -11,9 +14,6 @@ function NaverIcon(props: any) {
     </SvgIcon>
   );
 }
-import { useLang } from "../i18n/LanguageContext";
-import { t } from "../i18n/translations";
-import "../assets/styles/Main.scss";
 
 function Main() {
   const { lang } = useLang();
