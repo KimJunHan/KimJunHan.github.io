@@ -24,6 +24,13 @@ const navItems = [
   ["Contact", "contact"],
 ];
 
+const langs = [
+  { code: "us", label: "English", title: "English" },
+  { code: "kr", label: "KO", title: "한국어" },
+  { code: "cn", label: "ZH", title: "中文" },
+  { code: "jp", label: "JA", title: "日本語" },
+];
+
 function Navigation() {
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
@@ -99,7 +106,7 @@ function Navigation() {
           >
             <MenuIcon />
           </IconButton>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box sx={{ display: { xs: "none", sm: "block" }, flex: 1 }}>
             {navItems.map((item) => (
               <Button
                 key={item[0]}
@@ -108,6 +115,23 @@ function Navigation() {
               >
                 {item[0]}
               </Button>
+            ))}
+          </Box>
+          <Box className="lang-selector">
+            {langs.map((lang) => (
+              <a
+                key={lang.code}
+                href={lang.code === "us" ? "/" : `/${lang.code === "kr" ? "ko" : lang.code === "jp" ? "ja" : "zh"}/`}
+                className={`lang-flag${lang.code === "us" ? " active" : ""}`}
+                title={lang.title}
+              >
+                <img
+                  src={`https://flagcdn.com/w40/${lang.code}.png`}
+                  alt={lang.title}
+                  width="24"
+                  height="17"
+                />
+              </a>
             ))}
           </Box>
         </Toolbar>

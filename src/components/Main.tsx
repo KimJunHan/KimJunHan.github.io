@@ -2,7 +2,6 @@ import React from "react";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import ArticleIcon from "@mui/icons-material/Article";
-import EmailIcon from "@mui/icons-material/Email";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import "../assets/styles/Main.scss";
 
@@ -39,9 +38,6 @@ function Main() {
             >
               <ArticleIcon />
             </a>
-            <a href="mailto:kimjunhan1605@gmail.com">
-              <EmailIcon />
-            </a>
             <a
               href="https://www.linkedin.com/in/junhan-kim-a82b09207/"
               target="_blank"
@@ -74,9 +70,6 @@ function Main() {
               rel="noreferrer"
             >
               <ArticleIcon />
-            </a>
-            <a href="mailto:kimjunhan1605@gmail.com">
-              <EmailIcon />
             </a>
             <a
               href="https://www.linkedin.com/in/junhan-kim-a82b09207/"

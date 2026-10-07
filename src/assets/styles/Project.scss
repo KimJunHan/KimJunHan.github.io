@@ -23,7 +23,7 @@
   background: rgba(0, 0, 0, 0.02);
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 10px;
-  padding: 1.8rem;
+  padding: 0;
   min-height: 220px;
   display: flex;
   flex-direction: column;
@@ -40,6 +40,7 @@
     background: linear-gradient(90deg, #5c7cfa 0%, #6f9d5c 100%);
     opacity: 0;
     transition: opacity 0.2s ease;
+    z-index: 1;
   }
 
   &:hover::before {
@@ -82,6 +83,13 @@
   }
 }
 
+.project-card-body {
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
 .project-metrics {
   list-style: none;
   padding: 0;
@@ -105,14 +113,53 @@
   }
 }
 
+/* ---------- Project Banner (gradient + icon) ---------- */
+.project-banner {
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+
+  svg {
+    width: 48px;
+    height: 48px;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .banner-label {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+}
+
+.banner-mvision-hi {
+  background: linear-gradient(135deg, #1a237e 0%, #3949ab 50%, #5c6bc0 100%);
+}
+
+.banner-mvision-pop {
+  background: linear-gradient(135deg, #00695c 0%, #00897b 50%, #26a69a 100%);
+}
+
+.banner-h2go {
+  background: linear-gradient(135deg, #0d47a1 0%, #1976d2 50%, #42a5f5 100%);
+}
+
+.banner-humancentric {
+  background: linear-gradient(135deg, #4a148c 0%, #7b1fa2 50%, #ab47bc 100%);
+}
+
+/* ---------- Featured (KETI full-width with image) ---------- */
 .project-featured {
   grid-column: 1 / -1;
 
   .project-card {
     flex-direction: row;
     align-items: stretch;
-    padding: 0;
-    overflow: hidden;
   }
 
   .project-image {
@@ -120,28 +167,9 @@
     object-fit: cover;
     display: block;
   }
-
-  .project-card-body {
-    padding: 1.8rem;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
 }
 
-@media screen and (max-width: 700px) {
-  .project-featured {
-    .project-card {
-      flex-direction: column;
-    }
-
-    .project-image {
-      width: 100%;
-      max-height: 200px;
-    }
-  }
-}
-
+/* ---------- Zoom ---------- */
 .zoom {
   border-radius: 10px;
   transition: transform 0.2s, border-color 0.2s;
@@ -153,20 +181,34 @@
   border-color: rgba(92, 124, 250, 0.3);
 }
 
-@media screen {
-  @media (max-width: 700px) {
-    .projects-container {
-      display: block;
-      padding-left: 5%;
-      padding-right: 5%;
+/* ---------- Responsive ---------- */
+@media screen and (max-width: 700px) {
+  .projects-container {
+    display: block;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .projects-container .projects-grid {
+    display: block;
+  }
+
+  .projects-container .projects-grid .project {
+    padding-bottom: 5%;
+  }
+
+  .project-featured {
+    .project-card {
+      flex-direction: column;
     }
 
-    .projects-container .projects-grid {
-      display: block;
+    .project-image {
+      width: 100%;
+      max-height: 200px;
     }
+  }
 
-    .projects-container .projects-grid .project {
-      padding-bottom: 5%;
-    }
+  .project-banner {
+    height: 120px;
   }
 }
