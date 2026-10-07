@@ -2,6 +2,7 @@ import React from "react";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import SvgIcon from "@mui/material/SvgIcon";
 import { useLang } from "../i18n/LanguageContext";
 import { t } from "../i18n/translations";
@@ -28,6 +29,9 @@ function Main() {
       </a>
       <a href="https://blog.naver.com/kim_jun_han" target="_blank" rel="noreferrer">
         <NaverIcon />
+      </a>
+      <a href="https://www.instagram.com/kimjunhan_fsd/" target="_blank" rel="noreferrer">
+        <InstagramIcon />
       </a>
       <a href="https://www.linkedin.com/in/junhan-kim-a82b09207/" target="_blank" rel="noreferrer">
         <LinkedInIcon />
