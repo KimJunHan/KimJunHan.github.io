@@ -105,6 +105,43 @@
   }
 }
 
+.project-featured {
+  grid-column: 1 / -1;
+
+  .project-card {
+    flex-direction: row;
+    align-items: stretch;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .project-image {
+    width: 40%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .project-card-body {
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .project-featured {
+    .project-card {
+      flex-direction: column;
+    }
+
+    .project-image {
+      width: 100%;
+      max-height: 200px;
+    }
+  }
+}
+
 .zoom {
   border-radius: 10px;
   transition: transform 0.2s, border-color 0.2s;

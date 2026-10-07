@@ -6,21 +6,28 @@ function Project() {
     <div className="projects-container" id="projects">
       <h1>Industry Projects</h1>
       <div className="projects-grid">
-        <div className="project">
+        <div className="project project-featured">
           <div className="project-card zoom">
-            <span className="project-tag">National R&amp;D</span>
-            <span className="project-venue">KETI</span>
-            <h2>Semantic Grid Map for Drivable Area Analysis</h2>
-            <p className="project-subtitle">
-              Camera-based BEV segmentation with Cross-Mamba Attention &amp; Pseudo-LiDAR fusion, DS-theory probabilistic grid map, and ROS OccupancyGrid deployment
-            </p>
-            <ul className="project-metrics">
-              <li className="highlight">Drivable IoU 81.6%</li>
-              <li>DS Fusion +1% IoU</li>
-              <li>119 Scenes Labeled</li>
-              <li>OccupancyGrid @ 20 Hz</li>
-              <li>Jetson / Thor Deployment</li>
-            </ul>
+            <img
+              src={process.env.PUBLIC_URL + "/images/projects/keti-cover.jpg"}
+              alt="Semantic Grid Map for Drivable Area Analysis"
+              className="project-image"
+            />
+            <div className="project-card-body">
+              <span className="project-tag">National R&amp;D</span>
+              <span className="project-venue">KETI</span>
+              <h2>Semantic Grid Map for Drivable Area Analysis</h2>
+              <p className="project-subtitle">
+                Camera-based BEV segmentation with Cross-Mamba Attention &amp; Pseudo-LiDAR fusion, DS-theory probabilistic grid map, and ROS OccupancyGrid deployment
+              </p>
+              <ul className="project-metrics">
+                <li className="highlight">Drivable IoU 81.6%</li>
+                <li>DS Fusion +1% IoU</li>
+                <li>119 Scenes Labeled</li>
+                <li>OccupancyGrid @ 20 Hz</li>
+                <li>Jetson / Thor Deployment</li>
+              </ul>
+            </div>
           </div>
         </div>
         <div className="project">
